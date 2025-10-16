@@ -1,5 +1,6 @@
 "use client";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui";
+import Card, { CardContent, CardHeader } from "@/components/ui/Card";
 import React from "react";
 
 const Home = () => {
@@ -32,17 +33,17 @@ const Home = () => {
           <ContactUsButton />
         </div>
 
-        <Button color="error" variant="container" onClick={() => {}}>
+        <Button color="error" variant="text" onClick={() => {}}>
           312312
         </Button>
 
-        <Button
-          variant="outline"
-          color="success"
-          className="opacity-50 pointer-events-none cursor-not-allowed"
-        >
+        <Button variant="link" color="default" size={"sm"}>
           312312
         </Button>
+
+        <Card padding="16px" shadow="none" variant="borderLinear" type="purple">
+          <CardContent>Content</CardContent>
+        </Card>
       </main>
     </div>
   );
