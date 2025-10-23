@@ -4,13 +4,18 @@ import { type VariantProps, cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 
-const textVariants = cva("text-foreground break-normal", {
+const textVariants = cva("text-foreground break-normal text-sm font-normal", {
   variants: {
     variant: {
-      h1: "scroll-m-20 text-2xl leading-[32px] font-bold",
-      h2: "scroll-m-20 text-2xl leading-[32px] font-normal",
-      h3: "scroll-m-20 text-2xl leading-[32px] font-normal",
-      p: "leading-7 font-normal",
+      h1: "scroll-m-20 text-4xl font-bold tracking-tight ",
+      h2: "scroll-m-20 text-3xl font-semibold tracking-tight",
+      h3: "scroll-m-20 text-2xl font-semibold tracking-tight",
+      h4: "scroll-m-20 text-xl font-medium tracking-tight",
+      h5: "scroll-m-20 text-lg font-medium tracking-tight",
+      h6: "scroll-m-20 text-base font-medium tracking-tight",
+      subtitle: "text-sm font-medium",
+      body: "text-sm leading-7",
+      small: "text-xs leading-5",
     },
     textAlign: {
       left: "text-left",
@@ -31,14 +36,13 @@ const textVariants = cva("text-foreground break-normal", {
       base: "text-base leading-7", //16
       medium: "text-[17px] leading-[25px]",
       "x-medium": "text-lg leading-[28px]",
-      large: "text-2xl leading-8", //24
-      "x-large": "text-2xl leading-8", //24
-      "2x-large": "text-3xl leading-[60px]", //32
-      "3x-large": "text-[40px] leading-[60px]", //40
+      large: "text-2xl leading-8",
+      "x-large": "text-[28px] leading-[36px]",
+      "2x-large": "text-3xl leading-[44px]",
+      "3x-large": "text-[40px] leading-[56px]",
     },
   },
   defaultVariants: {
-    weight: 400,
     textAlign: "left",
   },
 });
@@ -59,7 +63,7 @@ const Text = React.forwardRef<HTMLParagraphElement, TextProps>(
       textAlign,
       weight,
       color,
-      size = "small",
+      size,
       as = "span",
       children,
       ellipsis,
@@ -76,39 +80,40 @@ const Text = React.forwardRef<HTMLParagraphElement, TextProps>(
 
     React.useEffect(() => {
       if (textRef.current && ellipsis) {
-        const isTextOverflowing =
-          textRef.current.scrollHeight > textRef.current.clientHeight;
-        setIsEllipsisActive(isTextOverflowing);
+        setIsEllipsisActive(
+          textRef.current.scrollHeight > textRef.current.clientHeight
+        );
       }
     }, [children, ellipsis]);
+
+    const styleEllipsis: React.CSSProperties =
+      !isExpanded && ellipsis
+        ? {
+            display: "-webkit-box",
+            WebkitLineClamp: ellipsis,
+            WebkitBoxOrient: "vertical",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+          }
+        : {};
 
     if (allowControlEllipsis) {
       return (
         <div className={cn(containerClassName, "relative inline")}>
           <Comp
-            className={cn(
-              textVariants({ variant, textAlign, weight, size, className })
-            )}
-            ref={(element) => {
-              if (typeof ref === "function") {
-                ref(element);
-              } else if (ref) {
-                ref.current = element;
-              }
-              textRef.current = element;
+            ref={(el) => {
+              textRef.current = el;
+              if (typeof ref === "function") ref(el);
+              else if (ref) ref.current = el;
             }}
+            className={cn(
+              textVariants({ variant, textAlign, weight, size }),
+              className
+            )}
             {...props}
             style={{
+              ...styleEllipsis,
               ...(color ? { color } : {}),
-              ...(!isExpanded && ellipsis
-                ? {
-                    display: "-webkit-box",
-                    WebkitLineClamp: ellipsis,
-                    WebkitBoxOrient: "vertical",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                  }
-                : {}),
               ...(props.style ?? {}),
             }}
           >
@@ -129,29 +134,19 @@ const Text = React.forwardRef<HTMLParagraphElement, TextProps>(
 
     return (
       <Comp
-        className={cn(
-          textVariants({ variant, textAlign, weight, size, className })
-        )}
-        ref={(element) => {
-          if (typeof ref === "function") {
-            ref(element);
-          } else if (ref) {
-            ref.current = element;
-          }
-          textRef.current = element;
+        ref={(el) => {
+          textRef.current = el;
+          if (typeof ref === "function") ref(el);
+          else if (ref) ref.current = el;
         }}
+        className={cn(
+          textVariants({ variant, textAlign, weight, size }),
+          className
+        )}
         {...props}
         style={{
-          ...(color ? { color } : {}),
-          ...(!isExpanded && ellipsis
-            ? {
-                display: "-webkit-box",
-                WebkitLineClamp: ellipsis,
-                WebkitBoxOrient: "vertical",
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-              }
-            : {}),
+          ...styleEllipsis,
+          ...(color && { color }),
           ...(props.style ?? {}),
         }}
       >

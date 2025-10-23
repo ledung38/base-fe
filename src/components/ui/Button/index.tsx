@@ -9,26 +9,34 @@ const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
   {
     variants: {
+      variant: {
+        container: "",
+        outline: "border bg-transparent hover:brightness-115",
+        text: "bg-transparent",
+        link: "bg-transparent hover:opacity-75 cursor-pointer",
+        dashed: "border border-dashed bg-transparent",
+        filled: "hover:brightness-90",
+      },
       color: {
         default:
           "bg-transparent text-foreground hover:text-primary hover:border-primary",
         primary:
-          "bg-primary text-primary-foreground hover:bg-primary/90 border-primary",
+          "bg-primary text-primary-foreground hover:bg-primary/80 border-primary",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/90 border-secondary",
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80 border-secondary",
         success:
-          "bg-success text-success-foreground hover:bg-success/90 border-success",
+          "bg-success text-success-foreground hover:bg-success/80 border-success",
         warning:
-          "bg-warning text-warning-foreground hover:bg-warning/90 border-warning",
-        info: "bg-info text-info-foreground hover:bg-info/90 border-info",
+          "bg-warning text-warning-foreground hover:bg-warning/80 border-warning",
+        info: "bg-info text-info-foreground hover:bg-info/80 border-info",
         error:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90 border-destructive",
+          "bg-destructive text-destructive-foreground hover:bg-destructive/80 border-destructive",
       },
       size: {
-        default: "h-9 px-4 py-2 has-[>svg]:px-3",
-        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
-        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
-        xLg: "h-14  px-8 has-[>svg]:px-6",
+        default: "h-9 px-4 py-2 has-[>svg]:px-3 text-sm",
+        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 text-xs",
+        lg: "h-10 rounded-md px-6 has-[>svg]:px-4  text-md",
+        xLg: "h-14  px-8 has-[>svg]:px-6 text-lg",
         icon: "size-9",
       },
       cursor: {
@@ -36,120 +44,122 @@ const buttonVariants = cva(
         pointer: "cursor-pointer",
         disabled: "cursor-not-allowed",
       },
-      variant: {
-        container: "border",
-        outline: "border bg-transparent hover:opacity-80 hover:bg-transparent",
-        text: "bg-transparent",
-        link: "bg-transparent hover:opacity-75 hover:bg-transparent",
-        dashed: "border border-dashed bg-transparent",
-        filled: "hover:brightness-90",
-      },
     },
-
     compoundVariants: [
-      // 1. outline
+      // 1. Container
+      {
+        variant: "container",
+        color: "default",
+        class: "bg-accent text-accent-foreground",
+      },
+      {
+        variant: "container",
+        color: "error",
+        class: "bg-destructive text-destructive-foreground",
+      },
+      // 2. outline
       {
         variant: "outline",
         color: "primary",
-        class: "text-primary  ",
+        class: "text-primary bg-transparent hover:bg-primary/2",
       },
       {
         variant: "outline",
         color: "secondary",
-        class: "text-secondary ",
+        class: "text-secondary bg-transparent hover:bg-secondary/2",
       },
       {
         variant: "outline",
         color: "success",
-        class: "text-success ",
+        class: "text-success bg-transparent hover:bg-success/2",
       },
       {
         variant: "outline",
         color: "warning",
-        class: "text-warning",
+        class: "text-warning bg-transparent hover:bg-warning/2",
       },
       {
         variant: "outline",
         color: "info",
-        class: "text-info ",
+        class: "text-info bg-transparent hover:bg-info/2",
       },
       {
         variant: "outline",
         color: "error",
-        class: "text-destructive ",
+        class: "text-destructive bg-transparent hover:bg-destructive/2",
       },
-      // 2. Dashed
+      // 3. Dashed
       {
         variant: "dashed",
         color: "primary",
-        class: "text-primary hover:bg-primary/10",
+        class: "text-primary  bg-transparent hover:bg-primary/10",
       },
       {
         variant: "dashed",
         color: "secondary",
-        class: "text-secondary hover:bg-secondary/10",
+        class: "text-secondary  bg-transparent hover:bg-secondary/10",
       },
       {
         variant: "dashed",
         color: "success",
-        class: "text-success hover:bg-success/10",
+        class: "text-success  bg-transparent hover:bg-success/10",
       },
       {
         variant: "dashed",
         color: "warning",
-        class: "text-warning hover:bg-warning/10",
+        class: "text-warning  bg-transparent hover:bg-warning/10",
       },
       {
         variant: "dashed",
         color: "info",
-        class: "text-info hover:bg-info/10",
+        class: "text-info  bg-transparent hover:bg-info/10",
       },
       {
         variant: "dashed",
         color: "error",
-        class: "text-destructive hover:bg-destructive/10",
+        class: "text-destructive  bg-transparent hover:bg-destructive/10",
       },
-      // 3. Text
+      // 4. Text
       {
         variant: "text",
         color: "primary",
-        class: "text-primary hover:bg-primary/10",
+        class: "text-primary bg-transparent hover:bg-primary/10",
       },
       {
         variant: "text",
         color: "secondary",
-        class: "text-secondary hover:bg-secondary/10",
+        class: "text-secondary bg-transparent hover:bg-secondary/10",
       },
       {
         variant: "text",
         color: "success",
-        class: "text-success hover:bg-success/10",
+        class: "text-success bg-transparent hover:bg-success/10",
       },
       {
         variant: "text",
         color: "warning",
-        class: "text-warning hover:bg-warning/10",
+        class: "text-warning bg-transparent hover:bg-warning/10",
       },
       {
         variant: "text",
         color: "info",
-        class: "text-info hover:bg-info/10",
+        class: "text-info bg-transparent hover:bg-info/10",
       },
       {
         variant: "text",
         color: "error",
-        class: "text-destructive hover:bg-destructive/10",
+        class: "text-destructive bg-transparent hover:bg-destructive/10",
       },
       {
         variant: "text",
         color: "default",
-        class: "hover:bg-accent hover:text-accent-foreground",
+        class: "hover:bg-accent bg-transparent hover:text-accent-foreground",
       },
-      // 4. filled
+      // 5. filled
       {
         variant: "filled",
         color: "primary",
-        class: "bg-primary/60 !text-primary-foreground ",
+        class: "bg-primary/60 text-primary-foreground",
       },
       {
         variant: "filled",
@@ -179,39 +189,39 @@ const buttonVariants = cva(
       {
         variant: "filled",
         color: "default",
-        class: "bg-accent hover:text-accent-foreground ",
+        class: "bg-accent",
       },
 
-      // link
+      // 6. Link
       {
         variant: "link",
         color: "primary",
-        class: "text-primary",
+        class: "text-primary bg-transparent hover:bg-transparent",
       },
       {
         variant: "link",
         color: "secondary",
-        class: "text-secondary",
+        class: "text-secondary bg-transparent hover:bg-transparent",
       },
       {
         variant: "link",
         color: "success",
-        class: "text-success",
+        class: "text-success bg-transparent hover:bg-transparent",
       },
       {
         variant: "link",
         color: "warning",
-        class: "text-warning",
+        class: "text-warning bg-transparent hover:bg-transparent",
       },
       {
         variant: "link",
         color: "info",
-        class: "text-info",
+        class: "text-info bg-transparent hover:bg-transparent",
       },
       {
         variant: "link",
         color: "error",
-        class: "text-destructive",
+        class: "text-destructive bg-transparent hover:bg-transparent",
       },
     ],
     defaultVariants: {
@@ -269,6 +279,7 @@ function Button({
   color,
   cursor,
   loading,
+  disabled,
   asChild = false,
   ...props
 }: React.ComponentProps<"button"> &
@@ -277,6 +288,26 @@ function Button({
     loading?: boolean;
   }) {
   const Comp = asChild ? Slot : "button";
+  if (asChild) {
+    return (
+      <Comp
+        data-slot="button"
+        className={cn(
+          buttonVariants({
+            variant,
+            color,
+            size,
+            cursor: props.onClick ? "pointer" : cursor ?? "default",
+          }),
+          className
+        )}
+        disabled={disabled || loading}
+        {...props}
+      >
+        {props.children}
+      </Comp>
+    );
+  }
 
   return (
     <Comp
@@ -290,15 +321,14 @@ function Button({
         }),
         className
       )}
+      disabled={disabled || loading}
       {...props}
     >
-      {loading ? (
+      {loading && (
         <Spin
           containerClassName={loadingConainerVariants({ size })}
           className={loadingVariants({ variant, size })}
         />
-      ) : (
-        <></>
       )}
       {props.children}
     </Comp>

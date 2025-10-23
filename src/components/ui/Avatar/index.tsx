@@ -5,7 +5,7 @@ import * as React from "react";
 
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 
-import defaultAvatar from "@lib/assets/images/portfolio_avt.webp";
+import defaultAvatar from "@/lib/assets/images/portfolio_avt.webp";
 import { cn } from "@/lib/utils";
 
 function Avatar({

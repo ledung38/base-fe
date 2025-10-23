@@ -14,8 +14,8 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/Command";
-import { Skeleton } from "@/components/ui/Skeleton";
 import { cn } from "@/lib/utils";
+import { Skeleton } from "@/components/ui/Skeleton";
 
 export type AutoCompleteOption = Record<"value" | "label", string> &
   Record<string, string>;
@@ -149,7 +149,7 @@ export const AutoComplete = ({
                     <CommandItem
                       key={`${option.value}-${index}`}
                       value={option.label}
-                      onMouseDown={(event) => {
+                      onMouseDown={(event: any) => {
                         event.preventDefault();
                         event.stopPropagation();
                       }}

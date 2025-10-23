@@ -41,6 +41,7 @@ type Props = React.PropsWithChildren & {
   background?: string;
   gap?: number;
   className?: string;
+  classNameWrapper?: string;
   ref?: React.RefObject<HTMLDivElement>;
 } & React.HTMLAttributes<HTMLDivElement>;
 
@@ -59,6 +60,7 @@ const Card = React.forwardRef<HTMLDivElement, Props>(
       gap,
       style,
       className,
+      classNameWrapper,
       ...props
     },
     ref
@@ -117,12 +119,12 @@ const Card = React.forwardRef<HTMLDivElement, Props>(
         <Flex
           vertical={true}
           className={cn(
-            `Card-wrapper h-full w-full rounded-[calc(${borderRadius}-2px)]`
+            ` h-full w-full rounded-[calc(${borderRadius}-2px)]`,
+            classNameWrapper
           )}
           style={{
             padding,
             background: backgroundLinear.inner,
-
             gap,
           }}
         >
