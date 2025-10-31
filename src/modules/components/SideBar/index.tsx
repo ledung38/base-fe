@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 const SideBar = () => {
   const pathname = usePathname();
   return (
-    <div className=" overflow-y-hidden hover:overflow-y-auto">
+    <div className="overflow-y-hidden hover:overflow-y-auto fixed top-28 left-1/10 right-0">
       <div className="flex flex-col gap-2 pr-2 border-r n w-50 max-h-screen ">
         {SideBarItems.map((item, index) => {
           const isActive = item.href === pathname;

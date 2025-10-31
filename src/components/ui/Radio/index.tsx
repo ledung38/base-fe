@@ -6,11 +6,21 @@ import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 import { type VariantProps, cva } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
+import { Label } from "@/components/ui/Label";
 
 const radioGroupItemVariants = cva(
-  "border-main focus-visible:border-main focus-visible:ring-none aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 aspect-square shrink-0 rounded-full border text-white shadow-xs transition-[color,box-shadow] outline-none disabled:cursor-not-allowed disabled:opacity-50",
+  " focus-visible:border-primary focus-visible:ring-none aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 aspect-square shrink-0 rounded-full border text-white shadow-xs transition-[color,box-shadow] outline-none disabled:cursor-not-allowed disabled:opacity-50",
   {
     variants: {
+      color: {
+        default: "enabled:hover:border-primary",
+        primary: "border-primary",
+        secondary: "border-secondary focus-visible:border-secondary",
+        success: "border-success focus-visible:border-success",
+        warning: "border-warning focus-visible:border-warning",
+        error: "border-destructive focus-visible:border-destructive",
+        info: "border-info focus-visible:border-info",
+      },
       size: {
         sm: "size-3",
         md: "size-4",
@@ -19,6 +29,7 @@ const radioGroupItemVariants = cva(
     },
     defaultVariants: {
       size: "md",
+      color: "default",
     },
   }
 );
@@ -40,8 +51,53 @@ const radioGroupIndicatorVariants = cva(
 );
 
 interface RadioGroupItemProps
-  extends React.ComponentProps<typeof RadioGroupPrimitive.Item>,
-    VariantProps<typeof radioGroupItemVariants> {}
+  extends Omit<React.ComponentProps<typeof RadioGroupPrimitive.Item>, "color">,
+    VariantProps<typeof radioGroupItemVariants> {
+  label?: string;
+  size?: "sm" | "md" | "lg";
+}
+
+interface RadioGroupProps
+  extends React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root> {
+  options?: RadioGroupItemProps[];
+  className?: string;
+  size?: "sm" | "md" | "lg";
+  itemClassName?: string;
+  color?: "primary" | "secondary" | "success" | "warning" | "error" | "info";
+}
+
+export function Radio({
+  options,
+  className,
+  size,
+  color,
+  itemClassName,
+  ...props
+}: RadioGroupProps) {
+  return (
+    <RadioGroup className={className} {...props}>
+      {options &&
+        options.map((opt) => (
+          <div className="flex items-center space-x-2" key={opt.value}>
+            <RadioGroupItem
+              id={`${opt.value}`}
+              className={itemClassName}
+              size={opt.size || size}
+              {...opt}
+              color={opt.color || color}
+              value={String(opt.value ?? "")}
+            />
+            <Label
+              htmlFor={`${opt.value}`}
+              className="text-foreground text-xs font-semibold"
+            >
+              {opt.label}
+            </Label>
+          </div>
+        ))}
+    </RadioGroup>
+  );
+}
 
 function RadioGroup({
   className,
@@ -50,24 +106,33 @@ function RadioGroup({
   return (
     <RadioGroupPrimitive.Root
       data-slot="radio-group"
-      className={cn("grid gap-3", className)}
+      className={cn("flex gap-3", className)}
       {...props}
     />
   );
 }
 
-function RadioGroupItem({ className, size, ...props }: RadioGroupItemProps) {
+function RadioGroupItem({
+  className,
+  size,
+  color,
+  ...props
+}: RadioGroupItemProps) {
   return (
     <RadioGroupPrimitive.Item
       data-slot="radio-group-item"
-      className={cn(radioGroupItemVariants({ size }), className)}
+      className={cn(radioGroupItemVariants({ size, color }), className)}
       {...props}
     >
       <RadioGroupPrimitive.Indicator
         data-slot="radio-group-indicator"
         className={cn(radioGroupIndicatorVariants({ size }))}
       >
-        <div className="bg-main rounded-full" />
+        <div
+          className={`bg-${
+            color == "error" ? "destructive" : color || "primary"
+          } rounded-full`}
+        />
       </RadioGroupPrimitive.Indicator>
     </RadioGroupPrimitive.Item>
   );
