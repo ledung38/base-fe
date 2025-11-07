@@ -53,7 +53,7 @@ export const SwitchComponent = () => {
         <Text variant="h5">Color</Text>
         <Card className="border rounded-4xl flex mt-5 " padding="24px">
           <Flex align={"center"} justify={"center"} gap={16}>
-            <Switch defaultChecked color="primary"></Switch>
+            <Switch defaultChecked></Switch>
             <Switch defaultChecked color="secondary"></Switch>
             <Switch defaultChecked color="success"></Switch>
             <Switch defaultChecked color="warning"></Switch>

@@ -80,7 +80,10 @@ const Card = React.forwardRef<HTMLDivElement, Props>(
               variant === "borderLinear"
                 ? "linear-gradient(white, white) padding-box, var(--gradient-border) border-box"
                 : "transparent",
-            inner: "var(--gradient-accent)",
+            inner:
+              variant === "borderLinear"
+                ? "transparent"
+                : "var(--gradient-accent)",
           };
         case "purple":
           return {
@@ -89,7 +92,9 @@ const Card = React.forwardRef<HTMLDivElement, Props>(
                 ? "linear-gradient(white, white) padding-box, var(--gradient-border) border-box"
                 : "transparent",
             inner:
-              "radial-gradient(farthest-corner at 0px 0px, #8642F620 0%, #B99CF520 100%)",
+              variant === "borderLinear"
+                ? "transparent"
+                : "radial-gradient(farthest-corner at 0px 0px, #8642F620 0%, #B99CF520 100%)",
           };
         default:
           return {
@@ -97,7 +102,10 @@ const Card = React.forwardRef<HTMLDivElement, Props>(
               variant === "borderLinear"
                 ? "linear-gradient(white, white) padding-box, var(--gradient-border) border-box"
                 : "transparent",
-            inner: "var(--gradient-primary)",
+            inner:
+              variant === "borderLinear"
+                ? "transparent"
+                : "var(--gradient-primary)",
           };
       }
     }, [variant, type, background]);

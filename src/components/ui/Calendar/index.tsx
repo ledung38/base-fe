@@ -22,8 +22,8 @@ function Calendar({
       className={cn("p-3", className)}
       timeZone="Asia/Ho_Chi_Minh"
       classNames={{
-        months: "flex flex-col sm:flex-row gap-2",
-        // month: 'flex flex-col gap-4',
+        months: "flex flex-col sm:flex-row gap-4",
+        // // month: 'flex flex-col gap-4',
         month_caption: "text-sm text-center",
         caption: "flex justify-center pt-1 relative items-center w-full",
         caption_label: "text-sm font-medium",
@@ -32,16 +32,16 @@ function Calendar({
           buttonVariants({ variant: "outline" }),
           "size-7 bg-transparent p-0 opacity-50 hover:opacity-100"
         ),
-        button_previous: " left-1 top-0",
-        button_next: " right-1",
+        button_previous: "left-1 top-0",
+        button_next: "right-1",
         table: "w-full border-collapse space-x-1",
         head_row: "flex",
         head_cell: "text-text-1 rounded-md w-8 font-normal text-[0.8rem]",
         row: "flex w-full mt-2",
         day: cn(
-          "relative p-0 text-center text-sm focus-within:relative focus-within:z-20 data-[selected=true]:bg-main data-[selected=true]:[&_button]:text-white data-[selected=true]:rounded-full cursor-pointer",
+          "relative p-0 text-center text-sm focus-within:relative focus-within:z-20 data-[selected=true]:bg-primary data-[selected=true]:[&_button]:text-white data-[selected=true]:rounded-full cursor-pointer",
           props.mode === "range"
-            ? "[&:has(>.day-range-end)]:rounded-r-md [&:has(>.day-range-start)]:rounded-l-md first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md"
+            ? "[&:has(>.day-range-end)]:rounded-r-md [&:has(>.day-range-start)]:rounded-l-md first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md data-[selected=true]:[&_button]:bg-primary data-[selected=true]:[&_button]:text-primary-foreground data-[selected=true]:[&_button]:rounded-full"
             : "[&:has([aria-selected])]:rounded-full"
         ),
         day_button: cn(

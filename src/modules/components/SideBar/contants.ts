@@ -39,4 +39,19 @@ export const SideBarItems = [
     href: "/components/switch",
     icon: "Components",
   },
+  {
+    name: "Input",
+    href: "/components/input",
+    icon: "Components",
+  },
+  {
+    name: "Upload",
+    href: "/components/upload",
+    icon: "Components",
+  },
+  {
+    name: "Card",
+    href: "/components/card",
+    icon: "Components",
+  },
 ];

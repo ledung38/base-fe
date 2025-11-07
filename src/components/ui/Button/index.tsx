@@ -50,7 +50,8 @@ const buttonVariants = cva(
       {
         variant: "container",
         color: "default",
-        class: "bg-accent text-accent-foreground",
+        class:
+          "bg-primary text-primary-foreground hover:bg-primary/80 hover:text-primary-foreground",
       },
       {
         variant: "container",
@@ -153,7 +154,7 @@ const buttonVariants = cva(
       {
         variant: "text",
         color: "default",
-        class: "hover:bg-accent bg-transparent hover:text-accent-foreground",
+        class: "hover:bg-primary/10 bg-transparent",
       },
       // 5. filled
       {
@@ -226,7 +227,7 @@ const buttonVariants = cva(
     ],
     defaultVariants: {
       variant: "container",
-      color: "primary",
+      color: "default",
       size: "default",
     },
   }
@@ -250,13 +251,13 @@ const loadingConainerVariants = cva("", {
 const loadingVariants = cva("", {
   variants: {
     variant: {
-      container: "text-main",
-      link: "text-main",
-      filled: "text-main",
-      dashed: "text-main",
-      primary: "text-main",
-      outline: "text-main",
-      text: "text-main",
+      container: "text-primary-foreground",
+      link: "text-primary",
+      filled: "text-primary",
+      dashed: "text-primary",
+      primary: "text-primary",
+      outline: "text-primary",
+      text: "text-primary",
     },
     size: {
       default: "size-5",
