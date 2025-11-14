@@ -50,7 +50,7 @@ function PaginationLink({
       data-active={isActive}
       className={cn(
         `border-border-color cursor-pointer border text-sm font-normal ${
-          isActive ? "bg-main border-main text-white" : ""
+          isActive ? "bg-primary border-primary text-white" : ""
         }`,
         className
       )}
@@ -61,6 +61,7 @@ function PaginationLink({
 
 function PaginationPrevious({
   className,
+  children,
   ...props
 }: React.ComponentProps<typeof PaginationLink>) {
   return (
@@ -70,14 +71,22 @@ function PaginationPrevious({
       className={cn("gap-1 px-2.5 sm:pl-2.5", className)}
       {...props}
     >
-      <ArrowCircleRightIcon className="rotate-180" />
-      <span className="hidden sm:block">Previous</span>
+      {children ? (
+        children
+      ) : (
+        <>
+          {" "}
+          <ArrowCircleRightIcon className="rotate-180" />
+          <span className="hidden sm:block">Previous</span>
+        </>
+      )}
     </PaginationLink>
   );
 }
 
 function PaginationNext({
   className,
+  children,
   ...props
 }: React.ComponentProps<typeof PaginationLink>) {
   return (
@@ -87,8 +96,15 @@ function PaginationNext({
       className={cn("gap-1 px-2.5 sm:pr-2.5", className)}
       {...props}
     >
-      <span className="hidden sm:block">Next</span>
-      <ArrowCircleRightIcon />
+      {children ? (
+        children
+      ) : (
+        <>
+          {" "}
+          <span className="hidden sm:block">Next</span>
+          <ArrowCircleRightIcon />
+        </>
+      )}
     </PaginationLink>
   );
 }

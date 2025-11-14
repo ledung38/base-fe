@@ -277,26 +277,28 @@
 
   --gradient-accent: linear-gradient(
     145deg,
-    oklch(0.75 0.12 180) 0%,
-    oklch(0.9 0.04 320 / 0.6) 50%,
+    oklch(0.78 0.16 310) 0%,
+    oklch(0.82 0.14 45 / 0.7) 45%,
     oklch(0.75 0.18 340) 100%
   );
+
   --foreground-gradient-accent: linear-gradient(
     120deg,
-    oklch(0.9 0.04 320) 0%,
+    oklch(0.82 0.14 45) 0%,
     oklch(0.75 0.18 340) 100%
   );
 
   --gradient-border: linear-gradient(
     151deg,
-    oklch(0.75 0.18 340) 0%,
-    oklch(0.75 0.12 180) 50%,
+    oklch(0.68 0.14 240) 0%,
+    oklch(0.9 0.04 320) 50%,
     oklch(0.75 0.18 340) 100%
   );
+
   --foreground-gradient-border: linear-gradient(
     90deg,
-    oklch(0.75 0.12 180) 0%,
-    oklch(0.68 0.14 320) 50%,
+    oklch(0.68 0.14 240) 0%,
+    oklch(0.9 0.04 320) 50%,
     oklch(0.75 0.18 340) 100%
   );
 }
@@ -304,13 +306,18 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    /* ----- Optional: giữ layout không nhảy khi có/không có scrollbar ----- */
-    scrollbar-gutter: stable;
   }
   body {
     @apply bg-background text-foreground overflow-x-hidden !p-0 !m-0;
   }
 
+  html {
+  }
+
+  .scrollbar-stable {
+    /* ----- Optional: giữ layout không nhảy khi có/không có scrollbar ----- */
+    scrollbar-gutter: stable;
+  }
   /* Firefox */
   /* * {
     scrollbar-width: thin;

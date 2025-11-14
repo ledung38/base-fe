@@ -270,108 +270,108 @@ export const ButtonComponent = () => {
         >
           <Flex gap={16} direction={"column"} className="max-w-fit">
             <Flex gap={16} align={"center"}>
-              <Button variant={"text"} size={"icon"} color="success">
+              <Button variant={"text"} size={"icon"} color="primary">
                 <BoxIcon />
               </Button>
-              <Button variant={"text"} size={"sm"} color="success">
+              <Button variant={"text"} size={"sm"} color="primary">
                 SMALL
               </Button>
-              <Button variant={"text"} size={"default"} color="success">
+              <Button variant={"text"} size={"default"} color="primary">
                 DEFAULT
               </Button>
-              <Button variant={"text"} size={"lg"} color="success">
+              <Button variant={"text"} size={"lg"} color="primary">
                 LARGE
               </Button>
-              <Button variant={"text"} size={"xLg"} color="success">
+              <Button variant={"text"} size={"xLg"} color="primary">
                 XLARGE
               </Button>
             </Flex>
 
             <Flex gap={16} align={"center"}>
-              <Button variant={"container"} size={"icon"} color="success">
+              <Button variant={"container"} size={"icon"} color="primary">
                 <BoxIcon />
               </Button>
-              <Button variant={"container"} size={"sm"} color="success">
+              <Button variant={"container"} size={"sm"} color="primary">
                 SMALL
               </Button>
-              <Button variant={"container"} size={"default"} color="success">
+              <Button variant={"container"} size={"default"} color="primary">
                 DEFAULT
               </Button>
-              <Button variant={"container"} size={"lg"} color="success">
+              <Button variant={"container"} size={"lg"} color="primary">
                 LARGE
               </Button>
-              <Button variant={"container"} size={"xLg"} color="success">
+              <Button variant={"container"} size={"xLg"} color="primary">
                 XLARGE
               </Button>
             </Flex>
 
             <Flex gap={16} align={"center"}>
-              <Button variant={"outline"} size={"icon"} color="success">
+              <Button variant={"outline"} size={"icon"} color="primary">
                 <BoxIcon />
               </Button>
-              <Button variant={"outline"} size={"sm"} color="success">
+              <Button variant={"outline"} size={"sm"} color="primary">
                 SMALL
               </Button>
-              <Button variant={"outline"} size={"default"} color="success">
+              <Button variant={"outline"} size={"default"} color="primary">
                 DEFAULT
               </Button>
-              <Button variant={"outline"} size={"lg"} color="success">
+              <Button variant={"outline"} size={"lg"} color="primary">
                 LARGE
               </Button>
-              <Button variant={"outline"} size={"xLg"} color="success">
+              <Button variant={"outline"} size={"xLg"} color="primary">
                 XLARGE
               </Button>
             </Flex>
             <Flex gap={16} align={"center"}>
-              <Button variant={"dashed"} size={"icon"} color="success">
+              <Button variant={"dashed"} size={"icon"} color="primary">
                 <BoxIcon />
               </Button>
-              <Button variant={"dashed"} size={"sm"} color="success">
+              <Button variant={"dashed"} size={"sm"} color="primary">
                 SMALL
               </Button>
-              <Button variant={"dashed"} size={"default"} color="success">
+              <Button variant={"dashed"} size={"default"} color="primary">
                 DEFAULT
               </Button>
-              <Button variant={"dashed"} size={"lg"} color="success">
+              <Button variant={"dashed"} size={"lg"} color="primary">
                 LARGE
               </Button>
-              <Button variant={"dashed"} size={"xLg"} color="success">
-                XLARGE
-              </Button>
-            </Flex>
-
-            <Flex gap={16} align={"center"}>
-              <Button variant={"filled"} size={"icon"} color="success">
-                <BoxIcon />
-              </Button>
-              <Button variant={"filled"} size={"sm"} color="success">
-                SMALL
-              </Button>
-              <Button variant={"filled"} size={"default"} color="success">
-                DEFAULT
-              </Button>
-              <Button variant={"filled"} size={"lg"} color="success">
-                LARGE
-              </Button>
-              <Button variant={"filled"} size={"xLg"} color="success">
+              <Button variant={"dashed"} size={"xLg"} color="primary">
                 XLARGE
               </Button>
             </Flex>
 
             <Flex gap={16} align={"center"}>
-              <Button variant={"link"} size={"icon"} color="success">
+              <Button variant={"filled"} size={"icon"} color="primary">
                 <BoxIcon />
               </Button>
-              <Button variant={"link"} size={"sm"} color="success">
+              <Button variant={"filled"} size={"sm"} color="primary">
                 SMALL
               </Button>
-              <Button variant={"link"} size={"default"} color="success">
+              <Button variant={"filled"} size={"default"} color="primary">
                 DEFAULT
               </Button>
-              <Button variant={"link"} size={"lg"} color="success">
+              <Button variant={"filled"} size={"lg"} color="primary">
                 LARGE
               </Button>
-              <Button variant={"link"} size={"xLg"} color="success">
+              <Button variant={"filled"} size={"xLg"} color="primary">
+                XLARGE
+              </Button>
+            </Flex>
+
+            <Flex gap={16} align={"center"}>
+              <Button variant={"link"} size={"icon"} color="primary">
+                <BoxIcon />
+              </Button>
+              <Button variant={"link"} size={"sm"} color="primary">
+                SMALL
+              </Button>
+              <Button variant={"link"} size={"default"} color="primary">
+                DEFAULT
+              </Button>
+              <Button variant={"link"} size={"lg"} color="primary">
+                LARGE
+              </Button>
+              <Button variant={"link"} size={"xLg"} color="primary">
                 XLARGE
               </Button>
             </Flex>

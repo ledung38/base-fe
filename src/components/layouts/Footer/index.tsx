@@ -1,8 +1,5 @@
-import Link from "next/link";
-
-import { Col, Container, Row, Separator, Text } from "@/components/ui";
+import { Text } from "@/components/ui";
 import Flex from "@/components/ui/Flex";
-import { TextSize } from "@/lib/enum";
 
 const Footer = () => {
   return (
@@ -37,13 +34,16 @@ const Footer = () => {
           </Col>
         </Row>
       </Container>
+       */}
       <Flex
         justify="center"
         align="center"
-        className="border-text-1 mt-5 border-t border-solid py-6"
+        className="border-border bg-accent  mt-5 border-t border-solid py-4"
       >
-        <Text size={"small"}>© 2025 DSC. All right reserved </Text>
-      </Flex> */}
+        <Text className="text-accent-foreground">
+          © 2025 LD - Design. All rights reserved.
+        </Text>
+      </Flex>
     </footer>
   );
 };

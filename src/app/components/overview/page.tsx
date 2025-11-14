@@ -1,7 +1,4 @@
-import React from "react";
-
-const OverviewPage = () => {
-  return <div>OverviewPage</div>;
-};
-
-export default OverviewPage;
+import { OverviewComponent } from "@/app/components/overview/page.clent";
+export default function OverviewPage() {
+  return <OverviewComponent />;
+}

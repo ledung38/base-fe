@@ -71,3 +71,23 @@ function AccordionContent({
 }
 
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };
+
+// Example
+{
+  /* <Accordion
+  type="multiple"
+  className="w-full overflow-hidden rounded-b-2xl"
+  value={activeKey}
+  onValueChange={(value) => {
+    setSearchParam([{ key: "active", value }]);
+    setActiveKey(value);
+  }}
+>
+  {items.map((item) => (
+    <AccordionItem key={item.key} value={item.key}>
+      <AccordionTrigger>{item.label}</AccordionTrigger>
+      <AccordionContent className="pb-0">{item.children}</AccordionContent>
+    </AccordionItem>
+  ))}
+</Accordion>; */
+}

@@ -9,12 +9,10 @@ const LayoutComponents = ({ children }: PropsWithChildren) => {
   return (
     <div className="flex flex-col min-h-screen relative">
       <Header />
-      <Container size={"xl"} className="flex-1 mt-20">
-        <div className="flex pt-5 gap-20 ">
-          <SideBar />
-          {children}
-        </div>
-      </Container>
+      <div className="flex gap-10 px-40 mt-20 pt-5">
+        <SideBar />
+        {children}
+      </div>
       <Footer />
     </div>
   );

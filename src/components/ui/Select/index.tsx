@@ -90,11 +90,7 @@ export const Select = (props: Props) => {
           )}
         >
           <Text
-            color={
-              selectedOption?.label
-                ? "var(--foreground)"
-                : "var(--text-disabled)"
-            }
+            color={selectedOption?.label ? "var(--foreground)" : "var(--muted)"}
             className={props.valueClassName}
           >
             {selectedOption?.label ?? props.placeholder}

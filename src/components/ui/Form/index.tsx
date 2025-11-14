@@ -139,7 +139,7 @@ function FormDescription({ className, ...props }: React.ComponentProps<"p">) {
     <Text
       size={"x-small"}
       weight={400}
-      color="var(--text-disabled)"
+      color="var(--border)"
       data-slot="form-description"
       id={formDescriptionId}
       className={cn("", className)}
@@ -158,7 +158,7 @@ function FormMessage({ className, ...props }: React.ComponentProps<"p">) {
 
   return (
     <Text
-      color="var(--red)"
+      color="var(--destructive)"
       size={"x-small"}
       data-slot="form-message"
       id={formMessageId}

@@ -177,7 +177,7 @@ const DataTable = ({
                       <TableCell
                         key={cell.id}
                         className={cn(
-                          "border-line-color border-b py-2",
+                          "border-line-color border-b py-2 ",
                           meta?.className,
                           meta?.getCellClassName?.(cell)
                         )}

@@ -45,7 +45,7 @@ function TabsTrigger({
       role="tab"
       aria-selected={props["aria-selected"] || false}
       className={cn(
-        "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring data-[state=inactive]:hover:text-main/70 relative mx-2 inline-flex h-[calc(100%-1px)] flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-md border border-transparent py-1 text-sm font-medium whitespace-nowrap text-[var(--text-2)] transition-[color,box-shadow] before:absolute before:top-full before:h-[2px] before:w-0 before:rounded-md before:transition-all before:duration-300 before:ease-in-out focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:font-semibold data-[state=active]:text-[var(--main)] data-[state=active]:before:w-full data-[state=active]:before:bg-[var(--main)]",
+        "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring data-[state=inactive]:hover:text-primary/70 relative mx-2 inline-flex h-[calc(100%-1px)] flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-md border border-transparent py-1 text-sm font-medium whitespace-nowrap text-[var(--text-2)] transition-[color,box-shadow] before:absolute before:top-full before:h-[2px] before:w-0 before:rounded-md before:transition-all before:duration-300 before:ease-in-out focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:font-semibold data-[state=active]:text-[var(--primary)] data-[state=active]:before:w-full data-[state=active]:before:bg-[var(--primary)]",
         className
       )}
       {...props}

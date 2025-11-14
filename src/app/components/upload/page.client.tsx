@@ -1,30 +1,12 @@
 "use client";
-import { AddPlusCircleIcon, CheckBig, SearchIcon } from "@/components/icons";
-import { Button, Card, Upload, Text } from "@/components/ui";
-import { DateFormDemo } from "@/components/ui/DatePicker";
+import { AddPlusCircleIcon } from "@/components/icons";
+import { Button, Card, Text, Upload } from "@/components/ui";
 import Flex from "@/components/ui/Flex";
 import { UploadIcon } from "lucide-react";
-import React, { useState } from "react";
+import { useState } from "react";
 
 export const UploadComponent = () => {
   const [fileList, setFileList] = useState<File[] | null>(null);
-
-  const [events, setEvents] = React.useState([
-    {
-      id: "1",
-      start: new Date(2025, 10, 3), // 3/11/2025
-      end: new Date(2025, 10, 3),
-      title: "Họp nhóm dự án",
-      color: "bg-blue-500",
-    },
-    {
-      id: "2",
-      start: new Date(2025, 10, 5),
-      end: new Date(2025, 10, 7),
-      title: "Workshop lập trình",
-      color: "bg-green-500",
-    },
-  ]);
 
   return (
     <div className="flex flex-col gap-2 max-w-[800px] mx-auto">

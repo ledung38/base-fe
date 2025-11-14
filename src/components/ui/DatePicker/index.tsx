@@ -28,6 +28,7 @@ import {
 import { Button } from "@/components/ui/Button";
 import { Calendar } from "@/components/ui/Calendar";
 import { DateRange } from "react-day-picker";
+import { FormLabel } from "@/components/ui/Form";
 
 // -----------------------------------------------------------------------------
 // 1) Base DateField (native input type="date")
@@ -42,11 +43,9 @@ export type DateFieldProps = React.InputHTMLAttributes<HTMLInputElement> & {
 export const DateField = React.forwardRef<HTMLInputElement, DateFieldProps>(
   ({ className, label, hint, error, ...props }, ref) => {
     return (
-      <div className="grid gap-1.5">
+      <div className="grid gap-2">
         {label && (
-          <label className="text-sm font-medium text-foreground/90">
-            {label}
-          </label>
+          <label className="text-sm  text-foreground/90">{label}</label>
         )}
         <input
           ref={ref}
@@ -106,26 +105,22 @@ export function DatePicker({
     : placeholder;
 
   return (
-    <div className="grid gap-1.5">
-      {label && (
-        <label className="text-sm font-medium text-foreground/90">
-          {label}
-        </label>
-      )}
+    <div className="grid ">
+      {label && <FormLabel>{label}</FormLabel>}
 
       <div className="relative">
         <Popover open={open} onOpenChange={setOpen}>
-          <div className="flex gap-2">
+          <div className="flex gap-2 mt-2">
             <PopoverTrigger asChild>
               <Button
                 variant="outline"
                 className={cn(
-                  "w-full justify-between gap-2 px-3 hover:text-foreground",
+                  "w-full justify-between gap-2 px-3 hover:text-foreground bg-white",
                   !value && "text-muted-foreground"
                 )}
                 disabled={disabled}
               >
-                <span className="inline-flex items-center gap-2 ">
+                <span className="inline-flex items-center gap-2 font-normal">
                   <CalendarIcon className="h-4 w-4" />
                   {display}
                 </span>
@@ -215,12 +210,8 @@ export function DateRangePicker({
       : placeholder;
 
   return (
-    <div className="grid gap-1.5">
-      {label && (
-        <label className="text-sm font-medium text-foreground/90">
-          {label}
-        </label>
-      )}
+    <div className="grid ">
+      {label && <FormLabel>{label}</FormLabel>}
 
       <Popover open={open} onOpenChange={setOpen}>
         <div className="flex gap-2 items-center">
@@ -228,12 +219,12 @@ export function DateRangePicker({
             <Button
               variant="outline"
               className={cn(
-                "w-full justify-between gap-2 px-3 hover:text-foreground",
+                "w-full justify-between gap-2 mt-2 px-3 hover:text-foreground bg-white",
                 !value?.from || !value?.to ? "text-muted-foreground" : undefined
               )}
               disabled={disabled}
             >
-              <span className="inline-flex items-center gap-2">
+              <span className="inline-flex items-center gap-2 font-normal">
                 <CalendarIcon className="h-4 w-4" />
                 {text}
               </span>
@@ -283,9 +274,9 @@ export function DateRangePicker({
       </Popover>
 
       {hint && !error && (
-        <p className="text-[12px] text-muted-foreground">{hint}</p>
+        <span className="text-[12px] text-muted-foreground">{hint}</span>
       )}
-      {error && <p className="text-[12px] text-destructive">{error}</p>}
+      {error && <span className="text-[12px] text-destructive">{error}</span>}
     </div>
   );
 }

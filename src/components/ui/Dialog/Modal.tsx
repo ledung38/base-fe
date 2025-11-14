@@ -67,3 +67,17 @@ const Modal = ({
 };
 
 export default Modal;
+
+// Example
+{
+  /* <Modal
+      open={open}
+      onClose={onClose}
+      width={width}
+      disableCloseIcon={true}
+      title="ModalSubject"
+      className="p-0 max-sm:!w-[calc(100%-32px)] max-sm:!max-w-[calc(100%-32px)] max-sm:px-0"
+    >
+        Container
+    </Modal> */
+}
