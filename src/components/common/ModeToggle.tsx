@@ -24,6 +24,8 @@ export function ModeToggle() {
         placeholder="Chọn"
         onChange={(value) => setTheme(value)}
         value={theme}
+        triggerClassName="hover:border-primary-foreground"
+        valueClassName="!text-primary-foreground"
         options={[
           {
             value: "light",

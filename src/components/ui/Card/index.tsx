@@ -1,5 +1,4 @@
 import * as React from "react";
-
 import { cn } from "@/lib/utils";
 import Flex from "@/components/ui/Flex";
 import { cva } from "class-variance-authority";
@@ -78,18 +77,23 @@ const Card = React.forwardRef<HTMLDivElement, Props>(
           return {
             wrapper:
               variant === "borderLinear"
-                ? "linear-gradient(white, white) padding-box, var(--gradient-border) border-box"
+                ? "linear-gradient(white, white) padding-box, var(--gradient-primary) border-box"
                 : "transparent",
-            inner: "var(--gradient-accent)",
+            inner:
+              variant === "borderLinear"
+                ? "transparent"
+                : "var(--gradient-border)",
           };
         case "purple":
           return {
             wrapper:
               variant === "borderLinear"
-                ? "linear-gradient(white, white) padding-box, var(--gradient-border) border-box"
+                ? "linear-gradient(white, white) padding-box, var(--gradient-accent) border-box"
                 : "transparent",
             inner:
-              "radial-gradient(farthest-corner at 0px 0px, #8642F620 0%, #B99CF520 100%)",
+              variant === "borderLinear"
+                ? "transparent"
+                : "var(--gradient-accent)",
           };
         default:
           return {
@@ -97,7 +101,10 @@ const Card = React.forwardRef<HTMLDivElement, Props>(
               variant === "borderLinear"
                 ? "linear-gradient(white, white) padding-box, var(--gradient-border) border-box"
                 : "transparent",
-            inner: "var(--gradient-primary)",
+            inner:
+              variant === "borderLinear"
+                ? "transparent"
+                : "var(--gradient-primary)",
           };
       }
     }, [variant, type, background]);
@@ -117,9 +124,9 @@ const Card = React.forwardRef<HTMLDivElement, Props>(
         className={cn(cardVariants({ variant, type, shadow }), className)}
       >
         <Flex
-          vertical={true}
+          vertical
           className={cn(
-            ` h-full w-full rounded-[calc(${borderRadius}-2px)]`,
+            `h-full w-full rounded-[calc(${borderRadius}-2px)]`,
             classNameWrapper
           )}
           style={{
@@ -140,7 +147,7 @@ function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="card-header"
       className={cn(
-        "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-2  has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6",
+        "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start  has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6",
         className
       )}
       {...props}
@@ -191,7 +198,7 @@ function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-footer"
-      className={cn("flex items-center  [.border-t]:pt-6", className)}
+      className={cn("flex items-center [.border-t]:pt-6", className)}
       {...props}
     />
   );

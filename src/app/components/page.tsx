@@ -1,7 +1,8 @@
+import OverviewPage from "@/app/components/overview/page";
 import React from "react";
 
-const OverviewPage = () => {
-  return <div>OverviewPage</div>;
+const ComponentPage = () => {
+  return <OverviewPage />;
 };
 
-export default OverviewPage;
+export default ComponentPage;

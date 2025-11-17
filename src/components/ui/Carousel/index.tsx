@@ -5,9 +5,9 @@ import * as React from "react";
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react";
+import { ArrowCircleRightIcon } from "@/components/icons";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
-import { ArrowCircleRightIcon } from "@/components/icons";
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
@@ -132,13 +132,17 @@ function Carousel({
   );
 }
 
-function CarouselContent({ className, ...props }: React.ComponentProps<"div">) {
+function CarouselContent({
+  className,
+  containerClassName,
+  ...props
+}: React.ComponentProps<"div"> & { containerClassName?: string }) {
   const { carouselRef, orientation } = useCarousel();
 
   return (
     <div
       ref={carouselRef}
-      className="overflow-hidden"
+      className={cn("overflow-hidden", containerClassName)}
       data-slot="carousel-content"
     >
       <div
@@ -175,6 +179,7 @@ function CarouselPrevious({
   className,
   variant = "outline",
   size = "icon",
+  children,
   ...props
 }: React.ComponentProps<typeof Button>) {
   const { orientation, scrollPrev, canScrollPrev } = useCarousel();
@@ -195,8 +200,14 @@ function CarouselPrevious({
       onClick={scrollPrev}
       {...props}
     >
-      <ArrowCircleRightIcon className="rotate-180" />
-      <span className="sr-only">Previous slide</span>
+      {children ? (
+        children
+      ) : (
+        <>
+          <ArrowCircleRightIcon className="rotate-180" />
+          <span className="sr-only">Previous slide</span>
+        </>
+      )}
     </Button>
   );
 }
@@ -205,6 +216,7 @@ function CarouselNext({
   className,
   variant = "outline",
   size = "icon",
+  children,
   ...props
 }: React.ComponentProps<typeof Button>) {
   const { orientation, scrollNext, canScrollNext } = useCarousel();
@@ -225,8 +237,14 @@ function CarouselNext({
       onClick={scrollNext}
       {...props}
     >
-      <ArrowCircleRightIcon />
-      <span className="sr-only">Next slide</span>
+      {children ? (
+        children
+      ) : (
+        <>
+          <ArrowCircleRightIcon />
+          <span className="sr-only">Next slide</span>
+        </>
+      )}
     </Button>
   );
 }
