@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import * as React from "react";
 
-type InputProps = React.ComponentProps<"input"> & {
+type InputProps = Omit<React.ComponentProps<"input">, "prefix"> & {
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
   containerClassName?: string;

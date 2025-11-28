@@ -115,7 +115,7 @@ export function DatePicker({
               <Button
                 variant="outline"
                 className={cn(
-                  "w-full justify-between gap-2 px-3 hover:text-foreground bg-white",
+                  "w-full justify-between gap-2 px-3 hover:text-black bg-white",
                   !value && "text-muted-foreground"
                 )}
                 disabled={disabled}
@@ -219,7 +219,7 @@ export function DateRangePicker({
             <Button
               variant="outline"
               className={cn(
-                "w-full justify-between gap-2 mt-2 px-3 hover:text-foreground bg-white",
+                "w-full justify-between gap-2 mt-2 px-3 hover:text-black bg-white",
                 !value?.from || !value?.to ? "text-muted-foreground" : undefined
               )}
               disabled={disabled}

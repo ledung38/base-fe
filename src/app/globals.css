@@ -312,6 +312,7 @@
   }
 
   html {
+    scrollbar-gutter: stable;
   }
 
   .scrollbar-stable {

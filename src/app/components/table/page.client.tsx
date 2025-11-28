@@ -1,23 +1,11 @@
 "use client";
-import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuTrigger,
-  Text,
-} from "@/components/ui";
+import { Text } from "@/components/ui";
 import DataTable from "@/components/ui/DataTable";
 import {
   ColumnDef,
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ChevronRightIcon } from "lucide-react";
 
 type Person = {
   id: number;
@@ -65,7 +53,7 @@ const defaultData: Person[] = [
 export const TableComponent = () => {
   const getCellClassName = (cell: any) => {
     if (cell.row.index === 0) {
-      return "bg-[#EAEAEA] text-center";
+      return "text-center";
     }
     return "text-center";
   };
@@ -139,17 +127,10 @@ export const TableComponent = () => {
   });
 
   return (
-    <div className="flex flex-col gap-2 max-w-[800px] mx-auto">
+    <div className="flex flex-col gap-2 w-[800px] mx-auto">
       <Text variant="h1">Table</Text>
       <Text size={"medium"} as="p" className="mt-5">
         A table displays rows of data.
-      </Text>
-
-      <Text>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod nisi,
-        doloremque officia eum iusto obcaecati necessitatibus eos mollitia
-        laborum aspernatur non in aut delectus quam dolorem facilis est saepe
-        nulla.
       </Text>
 
       <Text variant="h3" className="block mt-5">

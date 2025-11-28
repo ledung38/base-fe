@@ -23,17 +23,10 @@ import React from "react";
 export const TooltipComponent = () => {
   const [value, setValue] = React.useState<number[]>([30, 70]);
   return (
-    <div className="flex flex-col gap-2 max-w-[800px] mx-auto">
+    <div className="flex flex-col gap-2 w-[800px] mx-auto">
       <Text variant="h1">Tooltip</Text>
       <Text size={"medium"} as="p" className="mt-5">
         Simple text popup box.
-      </Text>
-
-      <Text>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod nisi,
-        doloremque officia eum iusto obcaecati necessitatibus eos mollitia
-        laborum aspernatur non in aut delectus quam dolorem facilis est saepe
-        nulla.
       </Text>
 
       <Text variant="h3" className="block mt-5">

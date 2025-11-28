@@ -31,6 +31,38 @@ export function OverviewComponent() {
       icon: <FileText className="size-6 opacity-70" />,
     },
   ];
+  const text = "Hôm nay tôi đi làm vui quá";
+  const mid = Math.floor(text.length / 2);
+
+  const leftPart = text.slice(0, mid).split("");
+  const rightPart = text.slice(mid).split("");
+
+  const letterVariants = {
+    hidden: { scale: 1 },
+    visible: (i) => ({
+      scale: [1, 1.5, 1], // chữ nhún lớn lên rồi nhỏ lại
+      transition: {
+        delay: i * 0.05,
+        type: "tween",
+        ease: "easeInOut",
+        duration: 0.5,
+      },
+    }),
+  };
+
+  const righterVariants = {
+    hidden: { scale: 1 },
+    visible: (i) => ({
+      originX: "right",
+      scale: [1, 1.5, 1], // chữ nhún lớn lên rồi nhỏ lại
+      transition: {
+        delay: i * 0.05,
+        type: "tween",
+        ease: "easeInOut",
+        duration: 0.5,
+      },
+    }),
+  };
 
   return (
     <div className="w-full p-8 space-y-12 mx-auto">
@@ -42,7 +74,7 @@ export function OverviewComponent() {
             key={item.id}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.6 }}
           >
             <Card className="rounded-2xl border p-6 hover:shadow-xl transition">
               <CardContent className="space-y-3 p-0">
@@ -54,32 +86,53 @@ export function OverviewComponent() {
           </motion.div>
         ))}
       </div>
-      <div className="mt-12 max-w-4xl mx-auto space-y-6 text-gray-700 [&_strong]:text-primary">
-        <p>
+
+      <div className=" mt-12 max-w-4xl mx-auto space-y-6 text-foreground [&_strong]:text-primary">
+        <motion.p
+          initial={{ opacity: 0, x: "-200px" }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           <strong>LG Design System</strong> cung cấp <em>foundation tokens</em>{" "}
           bao gồm màu sắc, typography, spacing, shadow và border radius, đảm bảo
           tính nhất quán trong toàn bộ giao diện.
-        </p>
-        <p>
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, x: "-200px" }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+        >
           <strong>UI Components</strong> gồm Buttons, Inputs, Cards, Alerts,
           Modals… được xây dựng <em>reusable</em> và <em>configurable</em>, giúp
           phát triển nhanh các trang mới.
-        </p>
-        <p>
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, x: "-200px" }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <strong>Layouts & Templates</strong> hỗ trợ hệ thống{" "}
           <em>grid responsive</em>, spacing template và breakpoints, giúp các
           trang hiển thị tối ưu trên mọi thiết bị.
-        </p>
-        <p>
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, x: "-200px" }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
           <strong>Forms & Validation</strong> được tích hợp sẵn, đảm bảo{" "}
           <em>input validation</em>, giảm lỗi người dùng và cải thiện trải
           nghiệm.
-        </p>
-        <p>
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, x: "-200px" }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
           Hệ thống <strong>Theme & Tokens</strong> hỗ trợ{" "}
           <em>light/dark mode</em>, dễ tùy chỉnh màu sắc và style, giúp dự án
           triển khai nhanh mà vẫn đẹp và đồng bộ.
-        </p>
+        </motion.p>
       </div>
     </div>
   );

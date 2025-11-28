@@ -135,7 +135,7 @@ const DataTable = ({
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow
                 key={headerGroup.id}
-                className={cn("", headerRowClassName)}
+                className={cn("border-b bg-accent", headerRowClassName)}
               >
                 {headerGroup.headers.map((header) => {
                   const meta = header.column.columnDef.meta as
@@ -177,7 +177,7 @@ const DataTable = ({
                       <TableCell
                         key={cell.id}
                         className={cn(
-                          "border-line-color border-b py-2 ",
+                          "border-b py-2 ",
                           meta?.className,
                           meta?.getCellClassName?.(cell)
                         )}

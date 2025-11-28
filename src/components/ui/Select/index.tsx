@@ -90,7 +90,11 @@ export const Select = (props: Props) => {
           )}
         >
           <Text
-            color={selectedOption?.label ? "var(--foreground)" : "var(--muted)"}
+            color={
+              selectedOption?.label
+                ? "var(--foreground)"
+                : "var(--muted-foreground)"
+            }
             className={props.valueClassName}
           >
             {selectedOption?.label ?? props.placeholder}
@@ -112,7 +116,7 @@ export const Select = (props: Props) => {
             </SelectPrimitive.Icon>
           )}
         </SelectTrigger>
-        <SelectContent className={props.contentClassName}>
+        <SelectContent className={cn("z-9999", props.contentClassName)}>
           {props.options.map((option) => (
             <SelectItem
               key={option.value}
