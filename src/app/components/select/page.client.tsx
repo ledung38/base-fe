@@ -32,28 +32,21 @@ export const SelectComponent = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-2 max-w-[800px] mx-auto">
+    <div className="flex flex-col gap-2 w-[800px] mx-auto">
       <Text variant="h1">Select</Text>
       <Text size={"medium"} as="p" className="mt-5">
         Select components are used for collecting user provided information from
         a list of options.
       </Text>
 
-      <Text>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod nisi,
-        doloremque officia eum iusto obcaecati necessitatibus eos mollitia
-        laborum aspernatur non in aut delectus quam dolorem facilis est saepe
-        nulla.
-      </Text>
-
       <Text variant="h3" className="block mt-5">
-        Overview
+        Example
       </Text>
 
       <div>
         <Text variant="h5">Basic Usage</Text>
         <Text className="block">
-          Menus are positioned under their emitting elements, unless they are
+          Select are positioned under their emitting elements, unless they are
           close to the bottom of the viewport.
         </Text>
         <Card className="border rounded-4xl flex mt-5 " padding="24px">

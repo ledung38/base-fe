@@ -1,5 +1,10 @@
-import Home from "@/modules/home";
+import OverviewPage from "@/app/components/overview/page";
+import LayoutComponents from "@/components/layouts/LayoutComponents";
 
 export default function HomePage() {
-  return <Home />;
+  return (
+    <LayoutComponents>
+      <OverviewPage />
+    </LayoutComponents>
+  );
 }

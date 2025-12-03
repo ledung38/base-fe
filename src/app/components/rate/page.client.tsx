@@ -5,7 +5,7 @@ import Rate from "@/components/ui/Rate";
 
 export const RateComponent = () => {
   return (
-    <div className="flex flex-col gap-2 max-w-[800px] mx-auto">
+    <div className="flex flex-col gap-2 w-[800px] mx-auto">
       <Text variant="h1">Rating</Text>
       <Text size={"medium"} as="p" className="mt-5">
         {`Ratings provide insight regarding others' opinions and experiences, and can allow the user to submit a rating of their own.`}

@@ -4,17 +4,10 @@ import Flex from "@/components/ui/Flex";
 
 export const SwitchComponent = () => {
   return (
-    <div className="flex flex-col gap-2 max-w-[800px] mx-auto">
+    <div className="flex flex-col gap-2 w-[800px] mx-auto">
       <Text variant="h1">Switch</Text>
       <Text size={"medium"} as="p" className="mt-5">
         Switches toggle the state of a single setting on or off.
-      </Text>
-
-      <Text>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod nisi,
-        doloremque officia eum iusto obcaecati necessitatibus eos mollitia
-        laborum aspernatur non in aut delectus quam dolorem facilis est saepe
-        nulla.
       </Text>
 
       <Text variant="h3" className="block mt-5">

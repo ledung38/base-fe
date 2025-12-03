@@ -6,30 +6,17 @@ import React from "react";
 
 export const ButtonComponent = () => {
   return (
-    <div className="flex flex-col gap-5 mx-auto max-w-[800px]">
+    <div className="flex flex-col gap-5 mx-auto w-[800px]">
       <div>
         <Text variant="h1">Button</Text>
         <Text size={"medium"} as="p" className="mt-5">
           Buttons allow users to take actions, and make choices, with a single
           tap.
         </Text>
-
-        <Text as="p" className="mt-2">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod nisi,
-          doloremque officia eum iusto obcaecati necessitatibus eos mollitia
-          laborum aspernatur non in aut delectus quam dolorem facilis est saepe
-          nulla.
-        </Text>
       </div>
       <div>
         <Text variant="h3" className="block">
-          Overview
-        </Text>
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod nisi,
-          doloremque officia eum iusto obcaecati necessitatibus eos mollitia
-          laborum aspernatur non in aut delectus quam dolorem facilis est saepe
-          nulla.
+          Example
         </Text>
       </div>
       <div>

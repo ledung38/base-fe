@@ -4,22 +4,15 @@ import React from "react";
 
 export const TypographyComponent = () => {
   return (
-    <div className="flex flex-col gap-2 max-w-[800px] mx-auto">
+    <div className="flex flex-col gap-2 w-[800px] mx-auto">
       <Text variant="h1">Typography</Text>
       <Text size={"medium"} as="p" className="mt-5">
         Use typography to present your design and content as clearly and
         efficiently as possible.
       </Text>
 
-      <Text>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod nisi,
-        doloremque officia eum iusto obcaecati necessitatibus eos mollitia
-        laborum aspernatur non in aut delectus quam dolorem facilis est saepe
-        nulla.
-      </Text>
-
       <Text variant="h3" className="block mt-5">
-        Overview
+        Example
       </Text>
       <div className="flex flex-col gap-2 justify-center py-10 px-50 border rounded-4xl mt-8">
         <Text variant="h1" className="text-primary">

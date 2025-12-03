@@ -8,21 +8,13 @@ import {
   Row,
   Text,
 } from "@/components/ui";
-import { CheckCheckIcon, CheckCircle2Icon } from "lucide-react";
 
 export const AlertComponent = () => {
   return (
-    <div className="flex flex-col gap-2 max-w-[800px] mx-auto">
+    <div className="flex flex-col gap-2 w-[800px] mx-auto">
       <Text variant="h1">Alert</Text>
       <Text size={"medium"} as="p" className="mt-5">
         Displays a callout for user attention.
-      </Text>
-
-      <Text>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod nisi,
-        doloremque officia eum iusto obcaecati necessitatibus eos mollitia
-        laborum aspernatur non in aut delectus quam dolorem facilis est saepe
-        nulla.
       </Text>
 
       <Text variant="h3" className="block mt-5">
