@@ -23,7 +23,7 @@ const spinVariants = cva(
       size: "md",
       color: "primary",
     },
-  }
+  },
 );
 
 export interface SpinProps extends VariantProps<typeof spinVariants> {
@@ -58,7 +58,7 @@ const Spin = ({
         className={cn(
           "border-2 border-solid border-current border-r-transparent ",
           spinVariants({ size, color }),
-          className
+          className,
         )}
         role="status"
         aria-label="loading"

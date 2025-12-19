@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import { cva } from 'class-variance-authority';
-import { Toaster as Sonner, ToasterProps } from 'sonner';
+import { cva } from "class-variance-authority";
+import { Toaster as Sonner, ToasterProps } from "sonner";
 
-const toasterVariants = cva('toaster group', {
+const toasterVariants = cva("toaster group", {
   variants: {
     theme: {
-      light: 'bg-white text-gray-900 border-gray-200',
-      dark: 'bg-gray-900 text-gray-100 border-gray-800',
+      light: "bg-white text-gray-900 border-gray-200",
+      dark: "bg-gray-900 text-gray-100 border-gray-800",
     },
   },
   defaultVariants: {
-    theme: 'light',
+    theme: "light",
   },
 });
 
@@ -22,9 +22,9 @@ const Toaster = ({ ...props }: ToasterProps) => {
       className={toasterVariants()}
       style={
         {
-          '--normal-bg': 'var(--popover)',
-          '--normal-text': 'var(--popover-foreground)',
-          '--normal-border': 'var(--border)',
+          "--normal-bg": "var(--popover)",
+          "--normal-text": "var(--popover-foreground)",
+          "--normal-border": "var(--border)",
         } as React.CSSProperties
       }
       {...props}

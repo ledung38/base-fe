@@ -20,7 +20,8 @@ const containerVariants = cva("w-full h-full mx-auto p-4 max-w-full", {
 });
 
 interface ContainerProps
-  extends React.HTMLAttributes<HTMLDivElement>,
+  extends
+    React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof containerVariants> {}
 
 export const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
@@ -32,7 +33,7 @@ export const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
 Container.displayName = "Container";

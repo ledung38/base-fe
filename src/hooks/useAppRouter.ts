@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { NavigateOptions } from 'next/dist/shared/lib/app-router-context.shared-runtime';
-import { useRouter } from 'next/navigation';
+import { NavigateOptions } from "next/dist/shared/lib/app-router-context.shared-runtime";
+import { useRouter } from "next/navigation";
 
-import * as NProgress from 'nprogress';
+import * as NProgress from "nprogress";
 
 type TRouter = {
   push: (href: string, options?: NavigateOptions) => void;
@@ -30,7 +30,7 @@ export const useAppRouter = () => {
   };
 
   otherRouter.pushToNewTab = async (url) => {
-    window.open(url, '_blank');
+    window.open(url, "_blank");
     return;
   };
 

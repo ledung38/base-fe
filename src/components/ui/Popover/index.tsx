@@ -16,7 +16,7 @@ const PopoverTrigger = React.forwardRef<
     ref={ref}
     className={cn(
       "flex h-fit cursor-pointer items-center justify-center outline-none",
-      className
+      className,
     )}
     aria-label="popover-trigger"
     {...props}
@@ -36,7 +36,7 @@ const PopoverContent = React.forwardRef<
       sideOffset={sideOffset}
       className={cn(
         "text-popover-foreground data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-[1000] w-max origin-[--radix-popover-content-transform-origin] rounded-[24px] border border-[rgba(0,0,0,0.05)] bg-white shadow-md outline-none",
-        className
+        className,
       )}
       {...props}
     />

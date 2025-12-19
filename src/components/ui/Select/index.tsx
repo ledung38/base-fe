@@ -53,7 +53,7 @@ type Props = {
 
 export const Select = (props: Props) => {
   const [value, setValue] = useState<string | undefined | null>(
-    props.defaultValue || null
+    props.defaultValue || null,
   );
   const selectedOption = props.options.find((option) => option.value == value);
 
@@ -71,7 +71,7 @@ export const Select = (props: Props) => {
 
   useDidUpdateEffect(() => {
     setValue(
-      props.value ? props.value?.toString() : props.defaultValue || undefined
+      props.value ? props.value?.toString() : props.defaultValue || undefined,
     );
   }, [props.value]);
   return (
@@ -86,7 +86,7 @@ export const Select = (props: Props) => {
           id={props.id}
           className={cn(
             selectVariants({ size: props.size }),
-            props.triggerClassName
+            props.triggerClassName,
           )}
         >
           <Text

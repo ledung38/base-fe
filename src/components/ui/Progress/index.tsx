@@ -45,7 +45,7 @@ function Progress({
         data-slot="progress"
         className={cn(
           `bg-muted relative h-2 w-full overflow-hidden rounded-full`,
-          className
+          className,
         )}
         {...props}
       >
@@ -54,7 +54,7 @@ function Progress({
           className={cn(
             "bg-warning h-full w-full flex-1 transition-all",
             progressVariants({ color }),
-            indicatorClassName
+            indicatorClassName,
           )}
           style={{
             transform: `translateX(-${100 - (value || 0)}%)`,

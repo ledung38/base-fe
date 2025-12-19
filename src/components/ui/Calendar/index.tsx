@@ -30,7 +30,7 @@ function Calendar({
         nav: "absolute top-4 right-0 px-4 flex items-center justify-between w-full",
         nav_button: cn(
           buttonVariants({ variant: "outline" }),
-          "size-7 bg-transparent p-0 opacity-50 hover:opacity-100"
+          "size-7 bg-transparent p-0 opacity-50 hover:opacity-100",
         ),
         button_previous: "left-1 top-0",
         button_next: "right-1",
@@ -42,11 +42,11 @@ function Calendar({
           "relative p-0 text-center text-sm focus-within:relative focus-within:z-20 data-[selected=true]:bg-primary data-[selected=true]:[&_button]:text-white data-[selected=true]:rounded-full cursor-pointer",
           props.mode === "range"
             ? "[&:has(>.day-range-end)]:rounded-r-md [&:has(>.day-range-start)]:rounded-l-md first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md data-[selected=true]:[&_button]:bg-primary data-[selected=true]:[&_button]:text-primary-foreground data-[selected=true]:[&_button]:rounded-full"
-            : "[&:has([aria-selected])]:rounded-full"
+            : "[&:has([aria-selected])]:rounded-full",
         ),
         day_button: cn(
           buttonVariants({ variant: "text" }),
-          "size-8 p-0 font-normal aria-selected:opacity-100 aria-selected:text-white"
+          "size-8 p-0 font-normal aria-selected:opacity-100 aria-selected:text-white",
         ),
         day_range_start:
           "day-range-start aria-selected:bg-primary aria-selected:text-primary-foreground",

@@ -31,7 +31,7 @@ const radioGroupItemVariants = cva(
       size: "md",
       color: "default",
     },
-  }
+  },
 );
 
 const radioGroupIndicatorVariants = cva(
@@ -47,18 +47,20 @@ const radioGroupIndicatorVariants = cva(
     defaultVariants: {
       size: "md",
     },
-  }
+  },
 );
 
 interface RadioGroupItemProps
-  extends Omit<React.ComponentProps<typeof RadioGroupPrimitive.Item>, "color">,
+  extends
+    Omit<React.ComponentProps<typeof RadioGroupPrimitive.Item>, "color">,
     VariantProps<typeof radioGroupItemVariants> {
   label?: string;
   size?: "sm" | "md" | "lg";
 }
 
-interface RadioGroupProps
-  extends React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root> {
+interface RadioGroupProps extends React.ComponentPropsWithoutRef<
+  typeof RadioGroupPrimitive.Root
+> {
   options?: RadioGroupItemProps[];
   className?: string;
   size?: "sm" | "md" | "lg";

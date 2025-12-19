@@ -17,7 +17,7 @@ function Avatar({
       data-slot="avatar"
       className={cn(
         "ring-main/10 relative flex size-8 shrink-0 overflow-hidden rounded-full ring-1",
-        className
+        className,
       )}
       {...props}
     />
@@ -46,7 +46,7 @@ function AvatarFallback({
       data-slot="avatar-fallback"
       className={cn(
         "bg-muted flex size-full items-center justify-center rounded-full",
-        className
+        className,
       )}
       {...props}
     />

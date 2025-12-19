@@ -230,7 +230,7 @@ const buttonVariants = cva(
       color: "default",
       size: "default",
     },
-  }
+  },
 );
 
 const loadingConainerVariants = cva("", {
@@ -298,9 +298,9 @@ function Button({
             variant,
             color,
             size,
-            cursor: props.onClick ? "pointer" : cursor ?? "default",
+            cursor: props.onClick ? "pointer" : (cursor ?? "default"),
           }),
-          className
+          className,
         )}
         disabled={disabled || loading}
         {...props}
@@ -318,9 +318,9 @@ function Button({
           variant,
           color,
           size,
-          cursor: props.onClick ? "pointer" : cursor ?? "default",
+          cursor: props.onClick ? "pointer" : (cursor ?? "default"),
         }),
-        className
+        className,
       )}
       disabled={disabled || loading}
       {...props}

@@ -22,7 +22,7 @@ const tagVariants = cva(
       weight: 400,
       shape: "round",
     },
-  }
+  },
 );
 
 type TagProps = React.HTMLAttributes<HTMLDivElement> &

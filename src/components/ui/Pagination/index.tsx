@@ -52,7 +52,7 @@ function PaginationLink({
         `border-border-color cursor-pointer border text-sm font-normal ${
           isActive ? "bg-primary border-primary text-white" : ""
         }`,
-        className
+        className,
       )}
       {...props}
     />

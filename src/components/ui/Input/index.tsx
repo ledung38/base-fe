@@ -15,7 +15,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       <div
         className={cn(
           "relative flex w-full text-black items-center",
-          containerClassName
+          containerClassName,
         )}
       >
         {prefix && (
@@ -29,12 +29,12 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           type={type}
           data-slot="input"
           className={cn(
-            "file:text-black/80  selection:bg-primary/50 ring-border border flex h-9.5 w-full min-w-0 rounded-full bg-white px-3 py-1 text-base shadow-xs ring transition-[color,box-shadow] outline-none selection:text-white file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm ",
+            "file:text-black/80  selection:bg-primary/50 ring-border   hover:ring-primary   flex  w-full min-w-0 rounded-full bg-background px-3 py-3.5 text-base shadow-xs ring transition-[color,box-shadow] outline-none selection:text-white file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm placeholder:text-muted-foreground",
             "focus-visible:ring-primary focus-visible:border-none focus-visible:ring",
             "aria-invalid:ring-destructive/20 aria-invalid:border-destructive transition-all duration-300 ease-in-out o",
             prefix && "pl-9",
             suffix && "pr-9",
-            className
+            className,
           )}
           {...props}
         />
@@ -46,7 +46,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         )}
       </div>
     );
-  }
+  },
 );
 
 Input.displayName = "Input";

@@ -4,7 +4,7 @@ export const formatNumber = memoizeFunction(
   (
     x: number | string,
     fixedNumber: number | null = null,
-    decimalCharacter = "."
+    decimalCharacter = ".",
   ) => {
     if (x && fixedNumber) {
       if (typeof x === "string") {
@@ -15,14 +15,14 @@ export const formatNumber = memoizeFunction(
     x = x?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, decimalCharacter);
 
     return x;
-  }
+  },
 );
 
 export const formatMoney = memoizeFunction(
   (value?: number | string, fixedNumber?: any) => {
     if (value === undefined || value === null) return "";
     return formatNumber(value, fixedNumber ?? null, ",");
-  }
+  },
 );
 
 export function generateReadMoneyVND(number: number) {
@@ -95,6 +95,6 @@ export const encodeVietnamText = (text: string) => {
     text
       ?.normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "")
-      ?.toUpperCase()
+      ?.toUpperCase(),
   );
 };

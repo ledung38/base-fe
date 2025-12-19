@@ -5,7 +5,7 @@ export const scrollToElement = (pageElement: HTMLElement, padding?: number) => {
     positionY += pageElement.offsetTop;
     pageElement = pageElement.offsetParent as HTMLElement;
     window.scrollTo({
-      behavior: 'smooth',
+      behavior: "smooth",
       top: positionY - (padding ?? 0),
     });
   }
