@@ -27,7 +27,8 @@ const timelineVariants = cva("flex flex-col relative", {
  * @extends {VariantProps<typeof timelineVariants>}
  */
 interface TimelineProps
-  extends React.HTMLAttributes<HTMLOListElement>,
+  extends
+    React.HTMLAttributes<HTMLOListElement>,
     VariantProps<typeof timelineVariants> {
   /** Size of the timeline icons */
   iconsize?: "sm" | "md" | "lg";
@@ -52,7 +53,7 @@ const Timeline = React.forwardRef<HTMLOListElement, TimelineProps>(
         className={cn(
           timelineVariants({ size }),
           "relative min-h-[600px] w-full",
-          className
+          className,
         )}
         {...props}
       >
@@ -72,7 +73,7 @@ const Timeline = React.forwardRef<HTMLOListElement, TimelineProps>(
         })}
       </ol>
     );
-  }
+  },
 );
 Timeline.displayName = "Timeline";
 
@@ -81,8 +82,10 @@ Timeline.displayName = "Timeline";
  * @interface TimelineItemProps
  * @extends {Omit<HTMLMotionProps<"li">, "ref">}
  */
-interface TimelineItemProps
-  extends Omit<React.HTMLAttributes<HTMLLIElement>, "ref"> {
+interface TimelineItemProps extends Omit<
+  React.HTMLAttributes<HTMLLIElement>,
+  "ref"
+> {
   /** Date string for the timeline item */
   date?: string;
   /** Title of the timeline item */
@@ -128,11 +131,11 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
       iconClassName,
       ...props
     },
-    ref
+    ref,
   ) => {
     const commonClassName = cn(
       "relative w-full mb-8 last:mb-0 pl-8",
-      className
+      className,
     );
 
     const { style, ...filteredProps } = props;
@@ -143,7 +146,7 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
           <div
             className={cn(
               "bg-border-color absolute left-0 flex h-full w-0.5 flex-col items-center justify-center",
-              connectorClassName
+              connectorClassName,
             )}
           >
             {!!icon && (
@@ -153,7 +156,7 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
                 vertical={true}
                 className={cn(
                   "absolute top-1/2 z-10 h-fit w-fit -translate-y-1/2 rounded-full border-4 border-white",
-                  iconClassName
+                  iconClassName,
                 )}
               >
                 {icon}
@@ -194,7 +197,7 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
         {content}
       </li>
     );
-  }
+  },
 );
 TimelineItem.displayName = "TimelineItem";
 
@@ -224,7 +227,7 @@ const TimelineConnector = React.forwardRef<
         "from-primary to-muted bg-gradient-to-b":
           !color && status === "in-progress",
       },
-      className
+      className,
     )}
     {...props}
   />
@@ -251,7 +254,7 @@ const TimelineTitle = React.forwardRef<
     ref={ref}
     className={cn(
       "text-secondary-foreground leading-none font-semibold tracking-tight",
-      className
+      className,
     )}
     {...props}
   >
@@ -292,7 +295,7 @@ const TimelineEmpty = React.forwardRef<
     ref={ref}
     className={cn(
       "flex flex-col items-center justify-center p-8 text-center",
-      className
+      className,
     )}
     {...props}
   >

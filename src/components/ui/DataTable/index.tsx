@@ -65,7 +65,7 @@ const DataTable = ({
         >
           1
         </PaginationLink>
-      </PaginationItem>
+      </PaginationItem>,
     );
 
     if (currentPage > halfVisible + 1) {
@@ -94,7 +94,7 @@ const DataTable = ({
           >
             {i + 1}
           </PaginationLink>
-        </PaginationItem>
+        </PaginationItem>,
       );
     }
 
@@ -115,7 +115,7 @@ const DataTable = ({
           >
             {pageCount}
           </PaginationLink>
-        </PaginationItem>
+        </PaginationItem>,
       );
     }
 
@@ -128,7 +128,7 @@ const DataTable = ({
         <Table
           className={cn(
             "scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100",
-            className
+            className,
           )}
         >
           <TableHeader>
@@ -150,7 +150,7 @@ const DataTable = ({
                         ? null
                         : flexRender(
                             header.column.columnDef.header,
-                            header.getContext()
+                            header.getContext(),
                           )}
                     </TableHead>
                   );
@@ -179,12 +179,12 @@ const DataTable = ({
                         className={cn(
                           "border-b py-2 ",
                           meta?.className,
-                          meta?.getCellClassName?.(cell)
+                          meta?.getCellClassName?.(cell),
                         )}
                       >
                         {flexRender(
                           cell.column.columnDef.cell,
-                          cell.getContext()
+                          cell.getContext(),
                         )}
                       </TableCell>
                     );

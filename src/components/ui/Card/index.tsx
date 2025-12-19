@@ -62,7 +62,7 @@ const Card = React.forwardRef<HTMLDivElement, Props>(
       classNameWrapper,
       ...props
     },
-    ref
+    ref,
   ) => {
     const backgroundLinear = React.useMemo(() => {
       if (variant === "default") {
@@ -127,7 +127,7 @@ const Card = React.forwardRef<HTMLDivElement, Props>(
           vertical
           className={cn(
             `h-full w-full rounded-[calc(${borderRadius}-2px)]`,
-            classNameWrapper
+            classNameWrapper,
           )}
           style={{
             padding,
@@ -139,7 +139,7 @@ const Card = React.forwardRef<HTMLDivElement, Props>(
         </Flex>
       </div>
     );
-  }
+  },
 );
 
 function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
@@ -148,7 +148,7 @@ function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="card-header"
       className={cn(
         "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start  has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6",
-        className
+        className,
       )}
       {...props}
     />
@@ -181,7 +181,7 @@ function CardAction({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="card-action"
       className={cn(
         "col-start-2 row-span-2 row-start-1 self-start justify-self-end",
-        className
+        className,
       )}
       {...props}
     />

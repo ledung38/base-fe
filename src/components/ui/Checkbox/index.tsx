@@ -37,11 +37,12 @@ const checkboxVariants = cva(
       size: "md",
       variant: "default",
     },
-  }
+  },
 );
 
 interface CheckboxProps
-  extends Omit<React.ComponentProps<typeof CheckboxPrimitive.Root>, "color">,
+  extends
+    Omit<React.ComponentProps<typeof CheckboxPrimitive.Root>, "color">,
     VariantProps<typeof checkboxVariants> {
   label?: string | React.ReactNode;
   labelClassName?: string;

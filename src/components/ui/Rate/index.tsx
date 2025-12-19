@@ -61,9 +61,9 @@ const Rate = ({
               isInteractive
                 ? "hover:text-[oklch(0.75_0.1457_70.3)] group-hover/rate:text-[oklch(0.75_0.1457_70.3)] [&:hover~button]:text-border"
                 : readOnly
-                ? "cursor-default"
-                : "cursor-not-allowed opacity-50",
-              "data-[active=true]:text-[oklch(0.75_0.1457_70.3)]"
+                  ? "cursor-default"
+                  : "cursor-not-allowed opacity-50",
+              "data-[active=true]:text-[oklch(0.75_0.1457_70.3)]",
             )}
             onClick={() => handleClick(i)}
             tabIndex={readOnly ? -1 : 0}

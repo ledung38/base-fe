@@ -59,7 +59,7 @@ const Upload = ({
       const droppedFiles = Array.from(e.dataTransfer.files);
       handleFiles(droppedFiles);
     },
-    [disabled]
+    [disabled],
   );
 
   const handleFiles = useCallback(
@@ -83,20 +83,20 @@ const Upload = ({
           preview: URL.createObjectURL(file),
           uid: Date.now().toString(),
           fileName: file.name,
-        })
+        }),
       );
       if (onChange) {
         onChange(filesWithPreview);
       }
 
       setFiles((prev) =>
-        multiple ? [...prev, ...filesWithPreview] : filesWithPreview
+        multiple ? [...prev, ...filesWithPreview] : filesWithPreview,
       );
       if (inputRef.current) {
         inputRef.current.value = "";
       }
     },
-    [accept, maxSize, multiple, onChange, onError, disabled]
+    [accept, maxSize, multiple, onChange, onError, disabled],
   );
 
   const handleDragOver = useCallback(
@@ -105,7 +105,7 @@ const Upload = ({
       e.preventDefault();
       e.stopPropagation();
     },
-    [disabled]
+    [disabled],
   );
 
   const handleFileInput = useCallback(
@@ -115,7 +115,7 @@ const Upload = ({
         handleFiles(Array.from(e.target.files));
       }
     },
-    [handleFiles, disabled]
+    [handleFiles, disabled],
   );
 
   const handleClick = useCallback(() => {
@@ -130,7 +130,7 @@ const Upload = ({
         onChange(files.filter((f) => f.uid !== file.uid));
       }
     },
-    [setFiles]
+    [setFiles],
   );
 
   const isShowDescription = files.length > 0 ? !isShowPreview : true;
@@ -143,7 +143,7 @@ const Upload = ({
           disabled && "cursor-not-allowed opacity-50",
           !!noDrag &&
             "h-fit min-h-[unset] w-fit border-none p-0 hover:border-none",
-          className
+          className,
         )}
         {...(!noDrag && {
           onDrop: handleDrop,

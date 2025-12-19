@@ -71,7 +71,7 @@ const Text = React.forwardRef<HTMLParagraphElement, TextProps>(
       containerClassName,
       ...props
     },
-    ref
+    ref,
   ) => {
     const Comp = as;
     const [isExpanded, setIsExpanded] = React.useState(false);
@@ -81,7 +81,7 @@ const Text = React.forwardRef<HTMLParagraphElement, TextProps>(
     React.useEffect(() => {
       if (textRef.current && ellipsis) {
         setIsEllipsisActive(
-          textRef.current.scrollHeight > textRef.current.clientHeight
+          textRef.current.scrollHeight > textRef.current.clientHeight,
         );
       }
     }, [children, ellipsis]);
@@ -108,7 +108,7 @@ const Text = React.forwardRef<HTMLParagraphElement, TextProps>(
             }}
             className={cn(
               textVariants({ variant, textAlign, weight, size }),
-              className
+              className,
             )}
             {...props}
             style={{
@@ -141,7 +141,7 @@ const Text = React.forwardRef<HTMLParagraphElement, TextProps>(
         }}
         className={cn(
           textVariants({ variant, textAlign, weight, size }),
-          className
+          className,
         )}
         {...props}
         style={{
@@ -153,7 +153,7 @@ const Text = React.forwardRef<HTMLParagraphElement, TextProps>(
         {children}
       </Comp>
     );
-  }
+  },
 );
 
 Text.displayName = "Text";

@@ -35,7 +35,8 @@ const listItemVariants = cva("px-4 py-4", {
 });
 
 export interface ListProps
-  extends React.HTMLAttributes<HTMLUListElement>,
+  extends
+    React.HTMLAttributes<HTMLUListElement>,
     VariantProps<typeof listVariants> {
   dataSource?: any[];
   renderItem?: (item: any, index: number) => React.ReactNode;
@@ -59,7 +60,7 @@ const List = React.forwardRef<HTMLUListElement, ListProps>(
       itemClassName,
       ...props
     },
-    ref
+    ref,
   ) => {
     return (
       <ul
@@ -79,7 +80,7 @@ const List = React.forwardRef<HTMLUListElement, ListProps>(
                     size,
                     bordered,
                     className: itemClassName,
-                  })
+                  }),
                 )}
               >
                 {renderItem?.(item, index)}
@@ -91,7 +92,7 @@ const List = React.forwardRef<HTMLUListElement, ListProps>(
         )}
       </ul>
     );
-  }
+  },
 );
 
 List.displayName = "List";

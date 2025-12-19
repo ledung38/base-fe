@@ -38,13 +38,13 @@ const Modal = ({
   return (
     <Dialog
       open={open}
-      onOpenChange={maskClosable ? onClose ?? onCancel : undefined}
+      onOpenChange={maskClosable ? (onClose ?? onCancel) : undefined}
     >
       <DialogContent
         className={cn(
           "gap-0 overflow-hidden rounded-[24px] border-none bg-white shadow-xs max-sm:px-4",
           className,
-          disableCloseIcon && "[&>button]:hidden"
+          disableCloseIcon && "[&>button]:hidden",
         )}
         style={!!width ? { width, maxWidth: width } : undefined}
       >

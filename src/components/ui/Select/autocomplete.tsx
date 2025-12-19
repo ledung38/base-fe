@@ -43,7 +43,7 @@ export const AutoComplete = ({
 
   const [isOpen, setOpen] = useState(false);
   const [selected, setSelected] = useState<AutoCompleteOption>(
-    value as AutoCompleteOption
+    value as AutoCompleteOption,
   );
   const [inputValue, setInputValue] = useState<string>(value?.label || "");
 
@@ -62,7 +62,7 @@ export const AutoComplete = ({
       // This is not a default behaviour of the <input /> field
       if (event.key === "Enter" && input.value !== "") {
         const optionToSelect = options.find(
-          (option) => option.label === input.value
+          (option) => option.label === input.value,
         );
         if (optionToSelect) {
           setSelected(optionToSelect);
@@ -74,13 +74,13 @@ export const AutoComplete = ({
         input.blur();
       }
     },
-    [isOpen, options, onValueChange]
+    [isOpen, options, onValueChange],
   );
 
   const handleBlur = useCallback(() => {
     setOpen(false);
     const optionToSelect = options.find(
-      (option) => option.label === inputRef.current?.value
+      (option) => option.label === inputRef.current?.value,
     );
     setSelected({
       value: optionToSelect?.value || "",
@@ -105,7 +105,7 @@ export const AutoComplete = ({
         inputRef?.current?.blur();
       }, 0);
     },
-    [onValueChange]
+    [onValueChange],
   );
   useEffect(() => {
     setInputValue(value?.label || "");
@@ -130,7 +130,7 @@ export const AutoComplete = ({
         <div
           className={cn(
             "animate-in fade-in-0 zoom-in-95 absolute top-0 z-10 w-full rounded-xl bg-white outline-none",
-            isOpen ? "block" : "hidden"
+            isOpen ? "block" : "hidden",
           )}
         >
           <CommandList className="rounded-lg shadow-sm">
@@ -158,7 +158,7 @@ export const AutoComplete = ({
                         "flex w-full items-center gap-2",
                         isSelected
                           ? "bg-[#F7F2FF]"
-                          : "transition-all duration-200 hover:bg-[#F7F2FF]"
+                          : "transition-all duration-200 hover:bg-[#F7F2FF]",
                       )}
                     >
                       {option.label}
