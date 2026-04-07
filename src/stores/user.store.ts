@@ -14,7 +14,7 @@ const UserSliceInitialState = {
 };
 
 const createUserSlice: StateCreator<TUserSlice, [], [], TUserSlice> = (
-  set
+  set,
 ) => ({
   ...UserSliceInitialState,
   setUserDetail: (userDetail) => {

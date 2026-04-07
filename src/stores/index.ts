@@ -7,7 +7,7 @@ type TBoundSlice = TUserSlice;
 const useBoundStore = create<TBoundSlice>()(
   devtools((...a) => ({
     ...createUserSlice(...a),
-  }))
+  })),
 );
 
 export default useBoundStore;

@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Base metadata
+// Base metadata setting
 const baseUrl = "https://spotless-cleaning-psi.vercel.app";
 const siteName = "Spotless Cleaning";
 const description =

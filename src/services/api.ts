@@ -57,7 +57,7 @@ class CustomAxiosInstance {
       },
       (error) => {
         Promise.reject(error);
-      }
+      },
     );
 
     // Add auto refresh token
@@ -67,7 +67,7 @@ class CustomAxiosInstance {
       },
       async (error) => {
         return Promise.reject(error);
-      }
+      },
     );
   }
 
@@ -78,7 +78,7 @@ class CustomAxiosInstance {
   post<T = any>(
     path: string,
     data: any,
-    configs?: AxiosRequestConfig
+    configs?: AxiosRequestConfig,
   ): Promise<T> {
     return request(this.instance.post, path, data, configs);
   }
@@ -86,7 +86,7 @@ class CustomAxiosInstance {
   put<T = any>(
     path: string,
     data: any,
-    configs?: AxiosRequestConfig
+    configs?: AxiosRequestConfig,
   ): Promise<T> {
     return request(this.instance.put, path, data, configs);
   }
@@ -94,7 +94,7 @@ class CustomAxiosInstance {
   patch<T = any>(
     path: string,
     data: any,
-    configs?: AxiosRequestConfig
+    configs?: AxiosRequestConfig,
   ): Promise<T> {
     return request(this.instance.patch, path, data, configs);
   }
