@@ -1,8 +1,8 @@
-name: pr-into-develop||staging||master
+name: pr-into-develop
 
 on:
   pull_request:
-    branches: ["develop", "staging", "master"]
+    branches: ["develop"]
 
 concurrency:
   group: ci-${{ github.ref }}
@@ -25,16 +25,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "npm"
+          cache: "yarn"
 
       - name: Install dependencies
-        run: npm ci
+        run: yarn install --frozen-lockfile
 
       - name: Lint
-        run: npm run lint --if-present
+        run: yarn lint --if-present
 
       - name: Build
-        run: npm run build --if-present
+        run: yarn build --if-present
 
       - name: Test
-        run: npm test --if-present
+        run: yarn test --if-present
