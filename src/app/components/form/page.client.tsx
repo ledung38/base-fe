@@ -78,7 +78,7 @@ export const informationPrintFormSchema = z.object({
     },
     {
       error: "Chọn đủ khoảng ngày",
-    }
+    },
   ),
 });
 
