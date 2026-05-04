@@ -1,10 +1,8 @@
 "use client";
 import Footer from "@/components/layouts/Footer";
 import { Header } from "@/components/layouts/Header";
-import { Container } from "@/components/ui";
 import SideBar from "@/modules/components/SideBar";
 import React, { PropsWithChildren } from "react";
-import { motion } from "framer-motion";
 import PageFlip from "@/components/common/PageFlip";
 
 const LayoutComponents = ({ children }: PropsWithChildren) => {

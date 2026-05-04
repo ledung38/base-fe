@@ -15,7 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 // Base metadata setting
-const baseUrl = "https://spotless-cleaning-psi.vercel.app";
+const baseUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  "https://spotless-cleaning-psi.vercel.app";
 const siteName = "Spotless Cleaning";
 const description =
   "Professional cleaning services in Sydney. Deep cleaning, regular maintenance, end of lease cleaning, restaurant and mould cleaning. 2000+ happy clients, 8+ years experience.";
@@ -27,18 +29,7 @@ export const metadata: Metadata = {
     template: `%s | ${siteName}`,
   },
   description,
-  keywords: [
-    "cleaning services Sydney",
-    "house cleaning",
-    "deep cleaning",
-    "restaurant cleaning",
-    "end of lease cleaning",
-    "professional cleaners",
-    "residential cleaning",
-    "commercial cleaning",
-    "window cleaning",
-    "regular cleaning",
-  ],
+  keywords: [],
   authors: [
     {
       name: "Spotless Cleaning",
