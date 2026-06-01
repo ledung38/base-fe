@@ -292,8 +292,8 @@ The app uses a simple provider structure in `app/layout.tsx`:
 TypeScript paths are configured with two aliases:
 
 ```typescript
-import { Button } from "@/components/ui";        // @/* → ./src/*
-import logo from "@public/logo.png";             // @public/* → ./public/*
+import { Button } from "@/components/ui"; // @/* → ./src/*
+import logo from "@public/logo.png"; // @public/* → ./public/*
 ```
 
 #### Environment Variables
@@ -340,17 +340,20 @@ import Card, { CardContent, CardHeader } from "@/components/ui/Card";
 The project has 50+ UI components. **Always check and use existing components before creating new ones:**
 
 **Layout:**
+
 - `Container` - Responsive container (sizes: medium, large, xl, 2xl)
 - `Flex` - Flexbox wrapper
 - `Col` / `Row` - Column/Row layout helpers
 - `Separator` - Divider line
 
 **Typography & Display:**
+
 - `Text` - Typography with variants (h1-h6, subtitle, body, small) and size/weight props
 - `Tag` - Tag/chip component
 - `Empty` - Empty state
 
 **Form Components:**
+
 - `Form` / `FormField` / `FormItem` / `FormLabel` / `FormControl` / `FormMessage` - React Hook Form integration
 - `Input` - Text input with prefix/suffix support
 - `Select` / `Autocomplete` - Radix-based dropdowns
@@ -362,9 +365,11 @@ The project has 50+ UI components. **Always check and use existing components be
 - `Upload` - File upload
 
 **Buttons & Actions:**
+
 - `Button` - Button with variants (container, outline, text, link, dashed, filled) and colors (default, primary, secondary, success, warning, info, error)
 
 **Feedback:**
+
 - `Alert` - Alert messages
 - `Toaster` (Sonner) - Toast notifications
 - `Spin` - Loading spinner
@@ -373,6 +378,7 @@ The project has 50+ UI components. **Always check and use existing components be
 - `LoadingScreen` - Full-screen loading
 
 **Overlay:**
+
 - `Dialog` - Modal dialog (Radix)
 - `DropdownMenu` - Dropdown menus (Radix)
 - `Popover` - Popovers (Radix)
@@ -381,6 +387,7 @@ The project has 50+ UI components. **Always check and use existing components be
 - `Command` - Command palette (cmdk)
 
 **Data Display:**
+
 - `DataTable` - TanStack Table wrapper
 - `Table` - HTML table styling
 - `Card` - Card container
@@ -393,6 +400,7 @@ The project has 50+ UI components. **Always check and use existing components be
 - `Calendar` / `FullCalendar` - Calendar views
 
 **Navigation:**
+
 - `Tabs` / `RoundedTab` - Tab navigation
 - `Accordion` - Collapsible sections
 - `Pagination` - Page navigation
@@ -420,7 +428,7 @@ import { Button } from "@/components/ui";
 // Sizes: default, sm, lg, xLg, icon
 <Button variant="container" color="primary" size="default" loading={false}>
   Click me
-</Button>
+</Button>;
 ```
 
 ### Text Component API
@@ -474,6 +482,7 @@ The `<Toaster />` component from `@/components/ui/Sonner` must be included in th
 The project supports **3 themes**: `light` (default `:root`), `dark`, and `spring`.
 
 Themes are controlled via `data-theme` attribute on `<html>`:
+
 - `ThemeProvider` from `next-themes` manages theme switching
 - CSS variables use **OKLCH color space** for modern color handling
 
@@ -489,28 +498,28 @@ Themes are controlled via `data-theme` attribute on `<html>`:
 
 **Semantic Color Variables:**
 
-| Variable                | Usage                                  |
-| ----------------------- | -------------------------------------- |
-| `--background`          | Page background                        |
-| `--foreground`          | Default text color                     |
-| `--primary`             | Primary brand color                    |
-| `--primary-foreground`  | Text on primary backgrounds            |
-| `--secondary`           | Secondary accent color                 |
-| `--secondary-foreground`| Text on secondary backgrounds          |
-| `--success`             | Success state                          |
-| `--warning`             | Warning state                          |
-| `--info`                | Info state                             |
-| `--destructive`         | Error/danger state                     |
-| `--muted`               | Muted backgrounds                      |
-| `--muted-foreground`    | Muted text                             |
-| `--accent`              | Accent backgrounds                     |
-| `--accent-foreground`   | Text on accent backgrounds             |
-| `--card`                | Card background                        |
-| `--popover`             | Popover background                     |
-| `--border`              | Border color                           |
-| `--input`               | Input border/background                |
-| `--ring`                | Focus ring color                       |
-| `--disabled`            | Disabled state background              |
+| Variable                 | Usage                         |
+| ------------------------ | ----------------------------- |
+| `--background`           | Page background               |
+| `--foreground`           | Default text color            |
+| `--primary`              | Primary brand color           |
+| `--primary-foreground`   | Text on primary backgrounds   |
+| `--secondary`            | Secondary accent color        |
+| `--secondary-foreground` | Text on secondary backgrounds |
+| `--success`              | Success state                 |
+| `--warning`              | Warning state                 |
+| `--info`                 | Info state                    |
+| `--destructive`          | Error/danger state            |
+| `--muted`                | Muted backgrounds             |
+| `--muted-foreground`     | Muted text                    |
+| `--accent`               | Accent backgrounds            |
+| `--accent-foreground`    | Text on accent backgrounds    |
+| `--card`                 | Card background               |
+| `--popover`              | Popover background            |
+| `--border`               | Border color                  |
+| `--input`                | Input border/background       |
+| `--ring`                 | Focus ring color              |
+| `--disabled`             | Disabled state background     |
 
 **Tailwind usage:**
 
@@ -530,14 +539,14 @@ Themes are controlled via `data-theme` attribute on `<html>`:
 
 Gradients are defined as CSS custom properties:
 
-| Variable                        | Tailwind Class           | Usage                    |
-| ------------------------------- | ------------------------ | ------------------------ |
-| `--gradient-primary`            | `bg-gradient-primary`    | Primary gradient bg      |
-| `--gradient-accent`             | `bg-gradient-accent`     | Accent gradient bg       |
-| `--gradient-border`             | `bg-gradient-border`     | Gradient border effect   |
-| `--foreground-gradient-primary` | `text-gradient-primary`  | Gradient text (primary)  |
-| `--foreground-gradient-accent`  | `text-gradient-accent`   | Gradient text (accent)   |
-| `--foreground-gradient-border`  | `text-gradient-border`   | Gradient text (border)   |
+| Variable                        | Tailwind Class          | Usage                   |
+| ------------------------------- | ----------------------- | ----------------------- |
+| `--gradient-primary`            | `bg-gradient-primary`   | Primary gradient bg     |
+| `--gradient-accent`             | `bg-gradient-accent`    | Accent gradient bg      |
+| `--gradient-border`             | `bg-gradient-border`    | Gradient border effect  |
+| `--foreground-gradient-primary` | `text-gradient-primary` | Gradient text (primary) |
+| `--foreground-gradient-accent`  | `text-gradient-accent`  | Gradient text (accent)  |
+| `--foreground-gradient-border`  | `text-gradient-border`  | Gradient text (border)  |
 
 ```tsx
 // Background gradient
@@ -681,6 +690,7 @@ export default function LoginForm() {
 ### FormItem Error Behavior
 
 `FormItem` automatically:
+
 - Adds `mb-5` spacing by default
 - When there's an error: positions `FormMessage` absolutely below the field with `translate-y-full`
 - This prevents layout shifts when error messages appear
@@ -731,7 +741,12 @@ export type TMyFeatureSlice = {
 
 const initialState = { data: null };
 
-const createMyFeatureSlice: StateCreator<TMyFeatureSlice, [], [], TMyFeatureSlice> = (set) => ({
+const createMyFeatureSlice: StateCreator<
+  TMyFeatureSlice,
+  [],
+  [],
+  TMyFeatureSlice
+> = (set) => ({
   ...initialState,
   setData: (data) => set(() => ({ data })),
   resetMyFeatureSlice: () => set(() => initialState),
@@ -821,11 +836,11 @@ Enhanced Next.js router with NProgress loading bar:
 import { useAppRouter } from "@/hooks/useAppRouter";
 
 const router = useAppRouter();
-router.push("/dashboard");          // With loading animation
+router.push("/dashboard"); // With loading animation
 router.pushWithoutAnimation("/page"); // Without animation
-router.pushToNewTab("/external");    // New tab
-router.back();                       // Go back
-router.replace("/new-url");          // Replace URL
+router.pushToNewTab("/external"); // New tab
+router.back(); // Go back
+router.replace("/new-url"); // Replace URL
 ```
 
 ### `useMediaQuery`
@@ -887,18 +902,26 @@ import safeExecute from "@/lib/helpers/safe-execute";
 const result = await safeExecute(() => riskyOperation());
 
 // Returns default value on error
-const data = await safeExecute(() => fetchData(), [], { log: true, notify: true });
+const data = await safeExecute(() => fetchData(), [], {
+  log: true,
+  notify: true,
+});
 ```
 
 ### Format Utilities
 
 ```typescript
-import { formatNumber, formatMoney, generateReadMoneyVND, encodeVietnamText } from "@/lib/utils/format";
+import {
+  formatNumber,
+  formatMoney,
+  generateReadMoneyVND,
+  encodeVietnamText,
+} from "@/lib/utils/format";
 
-formatNumber(1234567);           // "1.234.567"
-formatMoney(1500000);            // "1,500,000"
-generateReadMoneyVND(1500000);   // "Một triệu năm trăm nghìn đồng"
-encodeVietnamText("Việt Nam");   // "VIET%20NAM"
+formatNumber(1234567); // "1.234.567"
+formatMoney(1500000); // "1,500,000"
+generateReadMoneyVND(1500000); // "Một triệu năm trăm nghìn đồng"
+encodeVietnamText("Việt Nam"); // "VIET%20NAM"
 ```
 
 ### `memoizeFunction`
@@ -929,12 +952,12 @@ scrollToElement(document.getElementById("section")!, 80); // 80px offset
 ```typescript
 import { Routes } from "@/lib/enum/routes";
 
-Routes.HOME                        // "/"
-Routes.SERVICE                     // "/service"
-Routes.SERVICE_END_OF_LEASE_CLEANING  // "/service/end-of-lease-cleaning"
-Routes.PRICING                     // "/pricing"
-Routes.ABOUT_US                    // "/about-us"
-Routes.BOOKING                     // "/booking"
+Routes.HOME; // "/"
+Routes.SERVICE; // "/service"
+Routes.SERVICE_END_OF_LEASE_CLEANING; // "/service/end-of-lease-cleaning"
+Routes.PRICING; // "/pricing"
+Routes.ABOUT_US; // "/about-us"
+Routes.BOOKING; // "/booking"
 ```
 
 ### TokenType
@@ -942,9 +965,9 @@ Routes.BOOKING                     // "/booking"
 ```typescript
 import { TokenType } from "@/lib/enum/common";
 
-TokenType.ACCESS_TOKEN   // "access_token"
-TokenType.REFRESH_TOKEN  // "refresh_token"
-TokenType.CSRF_TOKEN     // "csrf_token"
+TokenType.ACCESS_TOKEN; // "access_token"
+TokenType.REFRESH_TOKEN; // "refresh_token"
+TokenType.CSRF_TOKEN; // "csrf_token"
 ```
 
 ### TextSize
@@ -952,10 +975,10 @@ TokenType.CSRF_TOKEN     // "csrf_token"
 ```typescript
 import { TextSize, TextSizeStyle } from "@/lib/enum";
 
-TextSize.LARGE       // "large"   → { fontSize: "1.5rem", lineHeight: "2rem" }
-TextSize.MEDIUM      // "medium"  → { fontSize: "17px",   lineHeight: "25px" }
-TextSize.SMALL       // "small"   → { fontSize: "14px",   lineHeight: "22px" }
-TextSize.X_SMALL     // "x-small" → { fontSize: "0.75rem", lineHeight: "1.25rem" }
+TextSize.LARGE; // "large"   → { fontSize: "1.5rem", lineHeight: "2rem" }
+TextSize.MEDIUM; // "medium"  → { fontSize: "17px",   lineHeight: "25px" }
+TextSize.SMALL; // "small"   → { fontSize: "14px",   lineHeight: "22px" }
+TextSize.X_SMALL; // "x-small" → { fontSize: "0.75rem", lineHeight: "1.25rem" }
 ```
 
 ---
@@ -976,6 +999,7 @@ yarn test
 ### Test File Location
 
 Tests are in `src/test/`:
+
 - `*.component.test.tsx` - Component tests
 - `*.integration.test.tsx` - Integration tests
 - `a11y.test.tsx` - Accessibility tests
@@ -995,6 +1019,7 @@ Tests are in `src/test/`:
 ## Docker
 
 Multi-stage Dockerfile:
+
 1. **Builder**: `node:23.6.1-alpine`, `yarn install` + `yarn build`
 2. **Runner**: `node:23.6.1-alpine`, copies `.next` + `public`, `yarn install --production`
 3. Exposes port 3000, runs `yarn start`
@@ -1025,7 +1050,7 @@ export default function HomePage() {
 // ❌ WRONG - Don't put logic in page.tsx
 export default function HomePage() {
   const [data, setData] = useState(); // ❌
-  return <div>{/* UI logic */}</div>;  // ❌
+  return <div>{/* UI logic */}</div>; // ❌
 }
 ```
 
@@ -1098,6 +1123,7 @@ This project uses shadcn/ui with custom organization. New components should foll
 ### 10. SEO
 
 The project has comprehensive SEO setup:
+
 - Metadata API in `app/layout.tsx` (Open Graph, Twitter Card, etc.)
 - `robots.ts` for crawler rules
 - `sitemap.ts` for sitemap generation
