@@ -210,7 +210,7 @@ src/
 │   │   └── PageFlip.tsx         # Page flip animation
 │   │
 │   ├── layouts/                 # Layout components
-│   │   ├── LayoutComponents.tsx # Main layout (Header + Sidebar + Content + Footer)
+│   │   ├── LayoutComponents.tsx # Main layout (Header + Content + Footer)
 │   │   ├── contants.ts          # Menu items configuration
 │   │   ├── Header/              # Header with navigation
 │   │   │   ├── index.tsx
@@ -953,11 +953,6 @@ scrollToElement(document.getElementById("section")!, 80); // 80px offset
 import { Routes } from "@/lib/enum/routes";
 
 Routes.HOME; // "/"
-Routes.SERVICE; // "/service"
-Routes.SERVICE_END_OF_LEASE_CLEANING; // "/service/end-of-lease-cleaning"
-Routes.PRICING; // "/pricing"
-Routes.ABOUT_US; // "/about-us"
-Routes.BOOKING; // "/booking"
 ```
 
 ### TokenType
@@ -1030,17 +1025,11 @@ Multi-stage Dockerfile:
 
 ### 1. Page and Component Separation
 
-**CRITICAL: Pages should NEVER contain component logic.**
-
 ```tsx
-// ✅ CORRECT - app/page.tsx (minimal wrapper)
-import OverviewPage from "@/app/components/overview/page";
-import LayoutComponents from "@/components/layouts/LayoutComponents";
-
 export default function HomePage() {
   return (
     <LayoutComponents>
-      <OverviewPage />
+      <Home />
     </LayoutComponents>
   );
 }
