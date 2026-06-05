@@ -7,7 +7,6 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "*",
         allow: ["/"],
         disallow: ["/admin/", "/api/", "/private/"],
-        crawlDelay: 1,
       },
       {
         userAgent: "AhrefsBot",
@@ -23,7 +22,7 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap:
-      process.env.NEXT_PUBLIC_SITE_URL + "sitemap.xml" ||
+      process.env.NEXT_PUBLIC_SITE_URL + "/sitemap.xml" ||
       "https://spotless-cleaning-psi.vercel.app/sitemap.xml",
   };
 }
