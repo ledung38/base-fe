@@ -7,7 +7,6 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "*",
         allow: ["/"],
         disallow: ["/admin/", "/api/", "/private/"],
-        crawlDelay: 1,
       },
       {
         userAgent: "AhrefsBot",
@@ -22,8 +21,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/"],
       },
     ],
-    sitemap:
-      process.env.NEXT_PUBLIC_SITE_URL + "sitemap.xml" ||
-      "https://spotless-cleaning-psi.vercel.app/sitemap.xml",
+    sitemap: "https://www.wefixiphone.com.au/sitemap.xml",
   };
 }
